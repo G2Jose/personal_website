@@ -1,0 +1,11 @@
+{
+  "name": "personal_site",
+  "version": "10.0.0",
+  "private": true,
+  "scripts": {
+    "start": "./node_modules/.bin/http-server public -p 3000"
+  },
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}
