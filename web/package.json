@@ -1,5 +1,5 @@
 {
-  "name": "new",
+  "name": "web",
   "version": "1.0.0",
   "private": true,
   "description": "new",
@@ -14,7 +14,6 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "format": "prettier --write ./",
     "prepare": "husky install"
   },
   "dependencies": {
@@ -40,11 +39,6 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "husky": ">=6",
-    "lint-staged": ">=10",
-    "prettier": "^2.8.4",
     "typescript": "^4.9.5"
-  },
-  "lint-staged": {
-    "*./": "prettier --write"
   }
 }
