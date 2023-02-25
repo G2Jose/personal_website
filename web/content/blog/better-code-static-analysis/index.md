@@ -4,7 +4,7 @@ date: "2021-05-18T22:12:03.284Z"
 description: Writing code to parse AST and flag problematic patterns at build time in Ruby & Typescript.
 ---
 
-Static code analysis is the concept of examining source code and predicting how it will behave without actually running it. Often it's used by automated tooling as part of the development process to prevent problematic code from making it into a mainline branch. It is designed to complement other processes like manual testing, automated tests and pull request reviews.
+[Static code analysis](https://en.wikipedia.org/wiki/Static_program_analysis) is the concept of examining source code and predicting how it will behave without actually running it. Often it's used by automated tooling as part of the development process to prevent problematic code from making it into a mainline branch. It is designed to complement other processes like manual testing, automated tests and pull request reviews.
 
 Static code analysis is something we use quite heavily at Drop, particularly on the frontend, but also on the backend. Broadly speaking, the static analysis tools we use fall under two categories:
 
@@ -44,8 +44,8 @@ This can also be expressed as an [S-expression](https://en.wikipedia.org/wiki/S-
 
 Linting is usually done by inspecting the AST and flagging forbidden constructs and usage. At Drop, we use 2 main tools for this:
 
-1. Eslint for Typescript
-2. RuboCop for Ruby
+1. [Eslint](https://eslint.org/) for Typescript
+2. [RuboCop](https://rubocop.org/) for Ruby
 
 The typescript, react, ruby & rails communities all have rich selections of pre-written lint rules available that we use. But as we scale our team, it becomes helpful to write our own rules to enforce our internal coding standards. Enforcing coding conventions as rules that can be validated systematically and automatically has the following benefits:
 
@@ -128,34 +128,34 @@ A rule to enforce that all methods that have a mdc.push has a corresponding mdc.
 
 ```ruby
 class EnsureMdcCop < Cop
-        MSG = 'Make sure you have a corresponding mdc.pop. Link to best practices...'
-        def_node_matcher :mdc_push?, <<~PATTERN
-          (send (send (...) :mdc) :push ...)
-        PATTERN
+  MSG = 'Make sure you have a corresponding mdc.pop. Link to best practices...'
+  def_node_matcher :mdc_push?, <<~PATTERN
+    (send (send (...) :mdc) :push ...)
+  PATTERN
 
-        def on_send(node)
-          return unless mdc_push?(node)
-          ancestor_ensure_blocks = node.ancestors.select do |ancestor|
-            ancestor.type == :ensure
-          end
-          ancestor_ensure_block = ancestor_ensure_blocks.first
+  def on_send(node)
+    return unless mdc_push?(node)
+    ancestor_ensure_blocks = node.ancestors.select do |ancestor|
+      ancestor.type == :ensure
+    end
+    ancestor_ensure_block = ancestor_ensure_blocks.first
 
-          unless ancestor_ensure_block # Check if mdc operations are done inside an ensure block
-            add_offense(node)
-            return
-          end
+    unless ancestor_ensure_block # Check if mdc operations are done inside an ensure block
+      add_offense(node)
+      return
+    end
 
-          has_mdc_pop = ancestor_ensure_block.children.any? do |child| # check that there is a corresponding mdc.pop
-            has_only_mdc_pop_in_ensure = NodePattern.new('(send (send (...) :mdc) :pop ...)').match(child)
-            has_mdc_pop_in_ensure_with_other_lines = child.each_descendant.any? do |descendant|
-              NodePattern.new('(send (send (...) :mdc) :pop ...)').match(descendant)
-            end
-            has_only_mdc_pop_in_ensure || has_mdc_pop_in_ensure_with_other_lines
-          end
-          return if has_mdc_pop
-          add_offense(node)
-        end
+    has_mdc_pop = ancestor_ensure_block.children.any? do |child| # check that there is a corresponding mdc.pop
+      has_only_mdc_pop_in_ensure = NodePattern.new('(send (send (...) :mdc) :pop ...)').match(child)
+      has_mdc_pop_in_ensure_with_other_lines = child.each_descendant.any? do |descendant|
+        NodePattern.new('(send (send (...) :mdc) :pop ...)').match(descendant)
       end
+      has_only_mdc_pop_in_ensure || has_mdc_pop_in_ensure_with_other_lines
+    end
+    return if has_mdc_pop
+    add_offense(node)
+  end
+end
 ```
 
 This now flags any problematic code right within one's editor & as part of Continuous Integration checks.
@@ -305,3 +305,6 @@ TLDR: Enforcing internal coding conventions through custom static checks is gene
 ### References:
 
 - [Abstract Syntax Trees](https://en.wikipedia.org/wiki/Abstract_syntax_tree)
+- [Static code analysis](https://en.wikipedia.org/wiki/Static_program_analysis)
+- [AST explorer for many languages](https://astexplorer.net/)
+- [Rubocop: Custom Cops for Custom Needs](https://thoughtbot.com/blog/rubocop-custom-cops-for-custom-needs)

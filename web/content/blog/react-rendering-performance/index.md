@@ -240,3 +240,4 @@ Making animations run on the native thread generally leads to better performance
 ## References:
 
 - [Using the native thread for animations](https://reactnative.dev/blog/2017/02/14/using-native-driver-for-animated)
+- [React Native Performance Overview](https://reactnative.dev/docs/performance)
