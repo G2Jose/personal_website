@@ -233,3 +233,9 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
 At this point your app should be recognizing objects its pointed at!
 
 All code for the project can be found at https://github.com/G2Jose/ObjectClassifier
+
+## References
+
+- [WWDC 2017](https://developer.apple.com/videos/wwdc2017)
+- [Vision Framework](https://developer.apple.com/documentation/vision)
+- [CoreML Framework](https://developer.apple.com/documentation/coreml)
