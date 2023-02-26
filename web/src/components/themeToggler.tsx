@@ -34,6 +34,8 @@ export const ThemeToggler = () => {
     setStoredTheme(currentTheme)
   }, [currentTheme])
 
+  console.log("currentTheme", currentTheme)
+
   return (
     <div className="theme-switch-wrapper">
       {currentTheme === "light" ? (
