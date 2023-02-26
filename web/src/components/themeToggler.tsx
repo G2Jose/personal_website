@@ -36,19 +36,19 @@ export const ThemeToggler = () => {
 
   return (
     <div className="theme-switch-wrapper">
-      {currentTheme === "dark" ? (
-        <img
-          src={lightModeIcon}
-          onClick={setLightMode}
-          role="button"
-          alt="set light mode"
-        />
-      ) : (
+      {currentTheme === "light" ? (
         <img
           src={darkModeIcon}
           onClick={setDarkMode}
           role="button"
           alt="set dark mode"
+        />
+      ) : (
+        <img
+          src={lightModeIcon}
+          onClick={setLightMode}
+          role="button"
+          alt="set light mode"
         />
       )}
     </div>
