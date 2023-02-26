@@ -21,6 +21,7 @@
     "prepare": "husky install",
     "format": "yarn workspace web prettier --write ./",
     "build": "yarn workspace web build",
+    "clean": "yarn workspace web clean",
     "start": "yarn workspace web start"
   }
 }

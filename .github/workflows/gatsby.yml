@@ -78,7 +78,7 @@ jobs:
         env:
           PREFIX_PATHS: "true"
         run: |
-          ${{ steps.detect-package-manager.outputs.manager }} run gatsby clean
+          ${{ steps.detect-package-manager.outputs.manager }} run clean
           ${{ steps.detect-package-manager.outputs.manager }} run build
 
       - name: Upload artifact
