@@ -13,8 +13,10 @@ module.exports = {
     {
       files: ["*.graphql"],
       parser: "@graphql-eslint/eslint-plugin",
-      plugins: ["@graphql-eslint"],
+      plugins: ["@graphql-eslint", "react-hooks"],
       rules: {
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error",
         "@graphql-eslint/no-anonymous-operations": "error",
         "@graphql-eslint/naming-convention": [
           "error",

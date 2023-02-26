@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { ThemeToggler } from "./themeToggler"
 
 const Layout = ({
   location,
@@ -18,13 +19,17 @@ const Layout = ({
     header = (
       <h1 className="main-heading">
         <Link to="/">{title}</Link>
+        <ThemeToggler />
       </h1>
     )
   } else {
     header = (
-      <Link className="header-link-home" to="/">
-        {title}
-      </Link>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <Link className="header-link-home" to="/">
+          {title}
+        </Link>
+        <ThemeToggler />
+      </div>
     )
   }
 
