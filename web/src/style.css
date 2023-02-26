@@ -301,6 +301,7 @@ a:focus {
 .bio {
   display: flex;
   margin-bottom: var(--spacing-16);
+  align-items: center;
 }
 
 .bio p {
