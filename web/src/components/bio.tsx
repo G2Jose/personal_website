@@ -45,7 +45,8 @@ const Bio = () => {
         <>
           <p>
             Written by <strong>{author.name}</strong>, {author?.summary || null}
-            . All thoughts presented here are my own.{" "}
+            . <br />
+            All thoughts presented here are my own.{" "}
             <a href="https://www.linkedin.com/in/g2jose">Linkedin</a> |{" "}
             <a href="https://github.com/G2Jose">Github</a> |{" "}
             <a href="mailto:bigness_kudos00@icloud.com?body=%0D%0Asource%3A%20George's%20Blog">
