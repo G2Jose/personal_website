@@ -2,10 +2,25 @@ import lightModeIcon from "../images/light-mode.svg"
 import darkModeIcon from "../images/dark-mode.svg"
 import React from "react"
 
+const getStoredTheme = () => {
+  try {
+    const storedTheme = localStorage.getItem("theme") as null | "dark" | "light"
+    return storedTheme ? storedTheme : "dark"
+  } catch {
+    return "dark"
+  }
+}
+
+const setStoredTheme = (theme: "light" | "dark") => {
+  try {
+    localStorage.setItem("theme", theme)
+  } catch {
+    //
+  }
+}
+
 export const ThemeToggler = () => {
-  const [currentTheme, setCurrentTheme] = React.useState(
-    (localStorage.getItem("theme") as "light" | "dark" | null) || "dark"
-  )
+  const [currentTheme, setCurrentTheme] = React.useState(getStoredTheme())
 
   const setLightMode = React.useCallback(() => {
     setCurrentTheme("light")
@@ -16,14 +31,25 @@ export const ThemeToggler = () => {
 
   React.useEffect(() => {
     document.documentElement.setAttribute("data-theme", currentTheme)
+    setStoredTheme(currentTheme)
   }, [currentTheme])
 
   return (
     <div className="theme-switch-wrapper">
       {currentTheme === "dark" ? (
-        <img src={lightModeIcon} onClick={setLightMode} role="button" />
+        <img
+          src={lightModeIcon}
+          onClick={setLightMode}
+          role="button"
+          alt="set light mode"
+        />
       ) : (
-        <img src={darkModeIcon} onClick={setDarkMode} role="button" />
+        <img
+          src={darkModeIcon}
+          onClick={setDarkMode}
+          role="button"
+          alt="set dark mode"
+        />
       )}
     </div>
   )
