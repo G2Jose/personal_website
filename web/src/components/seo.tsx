@@ -12,10 +12,12 @@ const Seo = ({
   description,
   title,
   children,
+  image,
 }: {
   description?: string
   title: string
   children?: React.ReactNode
+  image?: string
 }) => {
   const { site } = useStaticQuery(
     graphql`
@@ -43,6 +45,7 @@ const Seo = ({
       <meta property="og:title" content={title} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
+      {image ? <meta property="og:image" content={image} /> : null}
       <meta name="twitter:card" content="summary" />
       <meta
         name="twitter:creator"

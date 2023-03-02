@@ -2,6 +2,7 @@
 title: Moving my HTTP website to HTTPS using LetsEncrypt, HAProxy and Docker
 date: "2017-02-27T22:12:03.284Z"
 description: Moving my HTTP website to HTTPS using LetsEncrypt, HAProxy and Docker
+image: "./architecture.webp"
 ---
 
 I've had a personal website hosted on an AWS EC2 instance with a domain purchased from Namecheap for a while now. My previous setup involved an express server serving a static directory, and running on port 80 on an AWS EC2 instance. I recently changed this up to instead use HTTPS and decided to write a post explaining how you can do so too!

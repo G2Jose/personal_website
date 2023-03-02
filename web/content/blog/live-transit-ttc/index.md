@@ -2,6 +2,7 @@
 title: Visualizing transit vehicle locations on a map in real-time using React
 date: "2017-07-09T22:12:03.284Z"
 description: Building a web app to show Toronto Transit Commission vehicles on a map in (almost) realtime.
+image: "./img-1.webp"
 ---
 
 In this blog post I’ll talk about how I built a visualization of Toronto Transit vehicle locations and some of the engineering challenges I ran into. A working demo can be found [on my personal website](https://georgejose.com/projects/livetransit/) (I’ve noticed some corporate networks blocking port 3000 and this application requires it), and all code can be found on [github](https://github.com/G2Jose/wheres-my-ttc).

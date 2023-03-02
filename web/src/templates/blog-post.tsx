@@ -68,6 +68,7 @@ export const Head = ({
     <Seo
       title={post?.frontmatter?.title || ""}
       description={post?.frontmatter?.description || post?.excerpt || ""}
+      image={post?.frontmatter?.image?.childImageSharp?.fluid?.src}
     />
   )
 }
@@ -93,6 +94,13 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        image {
+          childImageSharp {
+            fluid {
+              src
+            }
+          }
+        }
       }
     }
     previous: markdownRemark(id: { eq: $previousPostId }) {
