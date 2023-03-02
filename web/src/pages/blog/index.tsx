@@ -11,7 +11,6 @@ const BlogIndex = ({
   data: PageProps<Queries.IndexPageQuery>["data"]
   location: unknown
 }) => {
-  console.log("data", data)
   const siteTitle = data.site?.siteMetadata?.title || ""
   const posts = data.allMarkdownRemark.nodes
 
