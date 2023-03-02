@@ -122,5 +122,6 @@ module.exports = {
         icon: `src/images/profile-pic.png`,
       },
     },
+    "gatsby-plugin-sitemap",
   ],
 }
