@@ -1,13 +1,7 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.com/docs/reference/config-files/gatsby-config/
- */
+import { GatsbyConfig } from "gatsby"
 
-/**
- * @type {import('gatsby').GatsbyConfig}
- */
-module.exports = {
+const siteUrl = `https://georgejose.com`
+const config: GatsbyConfig = {
   graphqlTypegen: true,
   siteMetadata: {
     title: `George's Personal Blog`,
@@ -16,7 +10,7 @@ module.exports = {
       summary: `currently Sr. Engineering Manager @ Drop`,
     },
     description: `George Jose's personal blog`,
-    siteUrl: `https://georgejose.com`,
+    siteUrl,
     social: {
       twitter: `george__jose`,
     },
@@ -122,7 +116,6 @@ module.exports = {
         icon: `src/images/profile-pic.png`,
       },
     },
-    "gatsby-plugin-sitemap",
     {
       resolve: `gatsby-plugin-google-gtag`,
       options: {
@@ -132,5 +125,30 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+        }
+      `,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({ allSitePage: { nodes: allPages } }) => {
+          return allPages
+        },
+        serialize: ({ path }) => {
+          return {
+            url: path,
+          }
+        },
+      },
+    },
   ],
 }
+
+module.exports = config
