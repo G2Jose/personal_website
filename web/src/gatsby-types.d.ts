@@ -370,29 +370,18 @@ declare namespace Queries {
   type FieldSelectorEnum = "SELECT"
 
   type Fields = {
-    readonly lastModifiedTimestamp: Maybe<Scalars["Date"]>
     readonly slug: Maybe<Scalars["String"]>
   }
 
-  type Fields_lastModifiedTimestampArgs = {
-    difference: InputMaybe<Scalars["String"]>
-    formatString: InputMaybe<Scalars["String"]>
-    fromNow: InputMaybe<Scalars["Boolean"]>
-    locale: InputMaybe<Scalars["String"]>
-  }
-
   type FieldsFieldSelector = {
-    readonly lastModifiedTimestamp: InputMaybe<FieldSelectorEnum>
     readonly slug: InputMaybe<FieldSelectorEnum>
   }
 
   type FieldsFilterInput = {
-    readonly lastModifiedTimestamp: InputMaybe<DateQueryOperatorInput>
     readonly slug: InputMaybe<StringQueryOperatorInput>
   }
 
   type FieldsSortInput = {
-    readonly lastModifiedTimestamp: InputMaybe<SortOrderEnum>
     readonly slug: InputMaybe<SortOrderEnum>
   }
 
