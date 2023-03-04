@@ -5,12 +5,15 @@ import React, {
   useEffect,
   useRef,
 } from "react"
-import { Car } from "../pages/self-driving-car/car"
-import { Road } from "../pages/self-driving-car/road"
-import { Sensors } from "../pages/self-driving-car/sensors"
+import { Car } from "./selfDrivingCar/car"
+import { Road } from "./selfDrivingCar/road"
+import { Sensors } from "./selfDrivingCar/sensors"
 
 const CANVAS_WIDTH = 200
-const CANVAS_HEIGHT = window.innerHeight
+
+const isBrowser = typeof window !== "undefined"
+
+const CANVAS_HEIGHT = isBrowser ? window.innerHeight : "700px"
 
 export const Canvas = (
   props: DetailedHTMLProps<
