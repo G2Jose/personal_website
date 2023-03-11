@@ -24,12 +24,19 @@ export const Canvas = (
   const previousCanvasRef = useRef<HTMLCanvasElement | null>(null)
 
   const animate = useCallback(
-    (
-      context: CanvasRenderingContext2D,
-      car: Car,
-      road: Road,
+    ({
+      context,
+      car,
+      road,
+      sensors,
+      traffic,
+    }: {
+      context: CanvasRenderingContext2D
+      car: Car
+      road: Road
       sensors: Sensors
-    ) => {
+      traffic: Car[]
+    }) => {
       car.update()
       context.canvas.height = window.innerHeight
 
@@ -43,7 +50,9 @@ export const Canvas = (
 
       context.restore()
 
-      requestAnimationFrame(() => animate(context, car, road, sensors))
+      requestAnimationFrame(() =>
+        animate({ context, car, road, sensors, traffic })
+      )
     },
     []
   )
@@ -60,9 +69,16 @@ export const Canvas = (
 
       if (context) {
         const road = new Road(canvas.width / 2, canvas.width * 0.9, 3)
-        const car = new Car(road.getLaneCenterX(1), 100, 30, 50)
+        const car = new Car(
+          { x: road.getLaneCenterX(1), y: 100 },
+          { width: 30, height: 50 },
+          road.borders
+        )
+
+        const traffic = []
+
         const sensors = new Sensors(car, Math.PI / 2, 50, 200)
-        animate(context, car, road, sensors)
+        animate({ context, car, road, sensors, traffic })
       }
     }
   }, [])

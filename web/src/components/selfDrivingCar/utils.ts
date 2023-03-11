@@ -1,4 +1,5 @@
 import { Line, Point, SensorReading } from "./types"
+import { Polygon } from "./types"
 
 export const linearInterpolate = (
   start: number,
@@ -28,4 +29,20 @@ export const getIntersection = (line1: Line, line2: Line): SensorReading => {
   }
 
   return null
+}
+
+export const doesLineIntersectWithPolygon = (line: Line, polygon: Polygon) => {
+  const points = polygon
+  const lines = points.reduce((acc, curr, i) => {
+    const nextPoint = points[(i + 1) % points.length]
+    return [
+      ...acc,
+      {
+        start: { x: curr.x, y: curr.y },
+        end: { x: nextPoint.x, y: nextPoint.y },
+      },
+    ]
+  }, [] as Line[])
+
+  return lines.some(polygonLine => getIntersection(polygonLine, line))
 }
