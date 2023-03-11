@@ -1,4 +1,5 @@
 import { Controls } from "./controls"
+import { Line } from "./types"
 
 const ANGLE_STEP_SIZE = 0.03
 const MAX_SPEED = 9

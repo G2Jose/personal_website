@@ -38,7 +38,8 @@ export const Canvas = (
 
       road.draw(context)
       car.draw(context)
-      sensors.draw(context)
+
+      sensors.draw(context, road.borders)
 
       context.restore()
 

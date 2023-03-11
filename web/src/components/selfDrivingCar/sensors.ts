@@ -1,6 +1,7 @@
+import { compact } from "lodash"
 import { Car } from "./car"
-import { Line, Point } from "./types"
-import { linearInterpolate } from "./utils"
+import { Line, Point, SensorReading } from "./types"
+import { getIntersection, linearInterpolate } from "./utils"
 
 export class Sensors {
   numRays: number
@@ -8,6 +9,7 @@ export class Sensors {
   fieldOfView: number
   range: number
   car: Car
+  readings: SensorReading[]
 
   constructor(car: Car, fieldOfView: number, numRays: number, range: number) {
     this.car = car
@@ -15,6 +17,7 @@ export class Sensors {
     this.numRays = numRays
     this.range = range
     this.rays = []
+    this.readings = []
   }
 
   #updateRays() {
@@ -37,16 +40,47 @@ export class Sensors {
     })
   }
 
-  draw(context: CanvasRenderingContext2D) {
+  draw(context: CanvasRenderingContext2D, roadBorders: Line[]) {
     this.#updateRays()
-    this.rays.map(ray => {
+    this.rays.map((ray, index) => {
+      const reading = this.readings[index]
+
       context.setLineDash([])
       context.lineWidth = 2
       context.strokeStyle = "#fff8d6"
       context.beginPath()
       context.moveTo(ray.start.x, ray.start.y)
-      context.lineTo(ray.end.x, ray.end.y)
-      context.stroke()
+
+      if (reading) {
+        context.lineTo(reading.x, reading.y)
+        context.stroke()
+
+        context.strokeStyle = "red"
+        context.beginPath()
+        context.moveTo(reading.x, reading.y)
+        context.lineTo(ray.end.x, ray.end.y)
+        context.stroke()
+      } else {
+        context.lineTo(ray.end.x, ray.end.y)
+        context.stroke()
+      }
     })
+
+    this.readings = this.rays.map(ray => this.#read(ray, roadBorders))
+  }
+
+  #read(ray: Line, roadBorders: Line[]) {
+    const touches = roadBorders
+      .map(border => getIntersection(ray, border))
+      .filter(Boolean)
+
+    const offsets = touches.map(touch => touch?.offset || Infinity)
+
+    if (!offsets.length) {
+      return null
+    }
+
+    const minOffset = Math.min(...offsets)
+    return touches.find(touch => touch?.offset === minOffset) || null
   }
 }
