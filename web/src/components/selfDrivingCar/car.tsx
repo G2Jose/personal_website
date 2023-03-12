@@ -1,4 +1,6 @@
 import { Controls } from "./controls"
+import { NeuralNetwork } from "./neuralNetwork"
+import { Sensors } from "./sensors"
 import { Line, Point, Polygon, PolygonSize } from "./types"
 import { doesLineIntersectWithPolygon, getLinesFromPolygon } from "./utils"
 
@@ -28,6 +30,11 @@ class Car {
   roadBorders: Line[]
 
   identifier: string
+
+  neuralNetwork?: NeuralNetwork
+
+  sensors: Sensors
+
   constructor({
     center,
     size,
@@ -55,7 +62,15 @@ class Car {
 
     this.angle = 0
 
-    this.controls = new Controls(controllable ? "keyboard" : "traffic-ai")
+    const controlType = controllable ? "keyboard" : "traffic-ai"
+
+    this.controls = new Controls(controlType)
+    this.sensors = new Sensors(this, Math.PI / 2, 50, 200)
+
+    if (controlType === "keyboard") {
+      this.neuralNetwork = new NeuralNetwork([this.sensors.numRays, 6, 4])
+    }
+
     this.polygon = this.#createPolygon()
     this.damaged = false
     this.roadBorders = roadBorders
@@ -65,6 +80,19 @@ class Car {
     this.damaged = this.#assessDamaged(traffic)
     this.#move()
     this.polygon = this.#createPolygon()
+
+    if (this.neuralNetwork) {
+      const offsets = this.sensors.readings.map(reading =>
+        reading?.offset ? 1 - reading.offset : 0
+      )
+
+      const neuralNetworkOutputs = NeuralNetwork.feedForward(
+        offsets,
+        this.neuralNetwork
+      )
+
+      console.log(neuralNetworkOutputs)
+    }
   }
 
   draw(ctx: CanvasRenderingContext2D) {

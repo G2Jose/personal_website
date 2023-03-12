@@ -89,7 +89,7 @@ export const Canvas = (
           }),
         ]
 
-        const sensors = new Sensors(car, Math.PI / 2, 50, 200)
+        const sensors = car.sensors
         animate({ context, car, road, sensors, traffic })
       }
     }
