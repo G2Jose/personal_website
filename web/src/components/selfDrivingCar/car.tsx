@@ -65,7 +65,7 @@ class Car {
     const controlType = controllable ? "keyboard" : "traffic-ai"
 
     this.controls = new Controls(controlType)
-    this.sensors = new Sensors(this, Math.PI / 2, 50, 200)
+    this.sensors = new Sensors(this, Math.PI / 2, 10, 200)
 
     if (controlType === "keyboard") {
       this.neuralNetwork = new NeuralNetwork([this.sensors.numRays, 6, 4])
@@ -90,8 +90,6 @@ class Car {
         offsets,
         this.neuralNetwork
       )
-
-      console.log(neuralNetworkOutputs)
     }
   }
 
@@ -155,6 +153,15 @@ class Car {
     if (this.damaged) {
       return
     }
+
+    if (this.neuralNetwork) {
+      const outputs = this.neuralNetwork.getOutputs()
+      this.controls.forward = outputs[0] > 0
+      this.controls.reverse = outputs[1] > 0
+      this.controls.left = outputs[2] > 0
+      this.controls.right = outputs[3] > 0
+    }
+
     if (this.controls.forward) this.speed += this.acceleration
     if (this.controls.reverse) this.speed -= this.acceleration
 

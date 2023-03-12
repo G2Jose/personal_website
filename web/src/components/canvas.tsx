@@ -2,14 +2,17 @@ import React, {
   CanvasHTMLAttributes,
   DetailedHTMLProps,
   useCallback,
-  useEffect,
   useRef,
+  useState,
 } from "react"
 import { Car } from "./selfDrivingCar/car"
+import { NeuralNetwork } from "./selfDrivingCar/neuralNetwork"
 import { Road } from "./selfDrivingCar/road"
 import { Sensors } from "./selfDrivingCar/sensors"
+import { Visualizer } from "./selfDrivingCar/visualizer"
 
-const CANVAS_WIDTH = 200
+const CAR_CANVAS_WIDTH = 200
+const NN_CANVAS_WIDTH = 400
 
 const isBrowser = typeof window !== "undefined"
 
@@ -21,17 +24,22 @@ export const Canvas = (
     HTMLCanvasElement
   >
 ) => {
-  const previousCanvasRef = useRef<HTMLCanvasElement | null>(null)
+  const [neuralNetwork, setNeuralNetwork] = useState<NeuralNetwork | undefined>(
+    undefined
+  )
 
-  const animate = useCallback(
+  const previousCarCanvasRef = useRef<HTMLCanvasElement | null>(null)
+  const previousNNCanvasRef = useRef<HTMLCanvasElement | null>(null)
+
+  const animateCar = useCallback(
     ({
-      context,
+      carContext,
       car,
       road,
       sensors,
       traffic,
     }: {
-      context: CanvasRenderingContext2D
+      carContext: CanvasRenderingContext2D
       car: Car
       road: Road
       sensors: Sensors
@@ -41,39 +49,39 @@ export const Canvas = (
 
       traffic.forEach(c => c.update([...traffic, car]))
 
-      context.canvas.height = window.innerHeight
+      carContext.canvas.height = window.innerHeight
 
-      context.save()
-      context.translate(0, -car.y + context.canvas.height * 0.7)
+      carContext.save()
+      carContext.translate(0, -car.y + carContext.canvas.height * 0.7)
 
-      road.draw(context)
-      car.draw(context)
+      road.draw(carContext)
+      car.draw(carContext)
 
-      traffic.forEach(car => car.draw(context))
+      traffic.forEach(car => car.draw(carContext))
 
-      sensors.draw(context, road.borders, traffic)
+      sensors.draw(carContext, road.borders, traffic)
 
-      context.restore()
+      carContext.restore()
 
       requestAnimationFrame(() =>
-        animate({ context, car, road, sensors, traffic })
+        animateCar({ carContext: carContext, car, road, sensors, traffic })
       )
     },
     []
   )
 
-  const canvasRef = useCallback((canvas: HTMLCanvasElement) => {
-    if (previousCanvasRef.current) {
-      const canvas = previousCanvasRef.current
-      const context = canvas.getContext("2d")
-      context?.clearRect(0, 0, canvas.width, canvas.height)
+  const carCanvasRef = useCallback((carCanvas: HTMLCanvasElement) => {
+    if (previousCarCanvasRef.current) {
+      const canvas = previousCarCanvasRef.current
+      const carContext = canvas.getContext("2d")
+      carContext?.clearRect(0, 0, canvas.width, canvas.height)
     }
-    if (canvas) {
-      previousCanvasRef.current = canvas
-      const context = canvas?.getContext("2d")
+    if (carCanvas) {
+      previousCarCanvasRef.current = carCanvas
+      const carContext = carCanvas?.getContext("2d")
 
-      if (context) {
-        const road = new Road(canvas.width / 2, canvas.width * 0.9, 3)
+      if (carContext) {
+        const road = new Road(carCanvas.width / 2, carCanvas.width * 0.9, 3)
         const car = new Car({
           center: { x: road.getLaneCenterX(1), y: 100 },
           size: { width: 30, height: 50 },
@@ -90,21 +98,70 @@ export const Canvas = (
         ]
 
         const sensors = car.sensors
-        animate({ context, car, road, sensors, traffic })
+        setNeuralNetwork(car.neuralNetwork)
+        animateCar({ carContext: carContext, car, road, sensors, traffic })
       }
     }
   }, [])
 
+  const animateNeuralNetwork = useCallback(
+    ({
+      neuralNetworkContext,
+    }: {
+      neuralNetworkContext: CanvasRenderingContext2D
+    }) => {
+      if (neuralNetwork) {
+        Visualizer.drawNetwork(neuralNetworkContext, neuralNetwork)
+      }
+
+      requestAnimationFrame(() => {
+        animateNeuralNetwork({ neuralNetworkContext })
+      })
+    },
+    [neuralNetwork]
+  )
+
+  const nnCanvasRef = useCallback(
+    (nnCanvas: HTMLCanvasElement) => {
+      if (previousNNCanvasRef.current) {
+        const canvas = previousNNCanvasRef.current
+        const nnContext = canvas.getContext("2d")
+        nnContext?.clearRect(0, 0, canvas.width, canvas.height)
+      }
+      if (nnCanvas) {
+        previousNNCanvasRef.current = nnCanvas
+        const nnContext = nnCanvas?.getContext("2d")
+
+        if (nnContext) {
+          animateNeuralNetwork({ neuralNetworkContext: nnContext })
+        }
+      }
+    },
+    [neuralNetwork]
+  )
+
   return (
-    <canvas
-      {...props}
-      ref={canvasRef}
-      width={CANVAS_WIDTH}
-      height={CANVAS_HEIGHT}
-      style={{
-        backgroundColor: "lightgray",
-        alignSelf: "center",
-      }}
-    />
+    <div>
+      <canvas
+        {...props}
+        ref={carCanvasRef}
+        width={CAR_CANVAS_WIDTH}
+        height={CANVAS_HEIGHT}
+        style={{
+          backgroundColor: "lightgray",
+          alignSelf: "center",
+        }}
+      />
+      <canvas
+        {...props}
+        ref={nnCanvasRef}
+        width={NN_CANVAS_WIDTH}
+        height={CANVAS_HEIGHT}
+        style={{
+          backgroundColor: "black",
+          alignSelf: "center",
+        }}
+      />
+    </div>
   )
 }

@@ -1,4 +1,4 @@
-class Level {
+export class Level {
   inputs: number[]
   outputs: number[]
   biases: number[]
@@ -46,6 +46,12 @@ export class NeuralNetwork {
     this.levels = new Array(neuronCounts.length).fill(undefined).map((x, i) => {
       return new Level(neuronCounts[i], neuronCounts[i + 1])
     })
+  }
+
+  getOutputs() {
+    const lastLevel = this.levels[this.levels.length - 1]
+
+    return lastLevel.outputs
   }
 
   static feedForward(inputs: number[], network: NeuralNetwork) {
