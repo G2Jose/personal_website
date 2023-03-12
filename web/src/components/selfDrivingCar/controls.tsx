@@ -4,13 +4,13 @@ export class Controls {
   left: boolean
   right: boolean
 
-  constructor() {
-    this.forward = false
+  constructor(controlType: "keyboard" | "traffic-ai") {
+    this.forward = controlType === "traffic-ai"
     this.reverse = false
     this.left = false
     this.right = false
 
-    this.#addKeybaordListeners()
+    if (controlType === "keyboard") this.#addKeybaordListeners()
   }
 
   #addKeybaordListeners() {

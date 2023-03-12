@@ -1,9 +1,10 @@
 import { Controls } from "./controls"
 import { Line, Point, Polygon, PolygonSize } from "./types"
-import { doesLineIntersectWithPolygon } from "./utils"
+import { doesLineIntersectWithPolygon, getLinesFromPolygon } from "./utils"
 
 const ANGLE_STEP_SIZE = 0.03
 const MAX_SPEED = 9
+const MAX_SPEED_TRAFFIC = MAX_SPEED / 2
 const FRICTION = 0.02
 const ACCELERATION = 0.2
 
@@ -26,7 +27,20 @@ class Car {
   damaged: boolean
   roadBorders: Line[]
 
-  constructor(center: Point, size: PolygonSize, roadBorders: Line[]) {
+  identifier: string
+  constructor({
+    center,
+    size,
+    roadBorders,
+    controllable,
+  }: {
+    center: Point
+    size: PolygonSize
+    roadBorders: Line[]
+    controllable?: boolean
+  }) {
+    this.identifier = crypto.randomUUID()
+
     const { x, y } = center
     const { width, height } = size
     this.x = x
@@ -36,19 +50,19 @@ class Car {
 
     this.speed = 0
     this.acceleration = ACCELERATION
-    this.maxSpeed = MAX_SPEED
+    this.maxSpeed = controllable ? MAX_SPEED : MAX_SPEED_TRAFFIC
     this.friction = FRICTION
 
     this.angle = 0
 
-    this.controls = new Controls()
+    this.controls = new Controls(controllable ? "keyboard" : "traffic-ai")
     this.polygon = this.#createPolygon()
     this.damaged = false
     this.roadBorders = roadBorders
   }
 
-  update() {
-    this.damaged = this.#assessDamaged()
+  update(traffic: Car[]) {
+    this.damaged = this.#assessDamaged(traffic)
     this.#move()
     this.polygon = this.#createPolygon()
   }
@@ -66,10 +80,22 @@ class Car {
     ctx.fill()
   }
 
-  #assessDamaged() {
-    return this.roadBorders.some(border =>
+  #assessDamaged(traffic: Car[]) {
+    const damagedFromRoad = this.roadBorders.some(border =>
       doesLineIntersectWithPolygon(border, this.polygon)
     )
+
+    const damagedFromTraffic = traffic
+      .filter(car => car.identifier !== this.identifier)
+      .map(car => {
+        const lines = getLinesFromPolygon(car.polygon)
+        return lines.some(line =>
+          doesLineIntersectWithPolygon(line, this.polygon)
+        )
+      })
+      .reduce((acc, curr) => acc || curr, false)
+
+    return damagedFromTraffic || damagedFromRoad
   }
 
   #createPolygon() {

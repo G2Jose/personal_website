@@ -31,10 +31,9 @@ export const getIntersection = (line1: Line, line2: Line): SensorReading => {
   return null
 }
 
-export const doesLineIntersectWithPolygon = (line: Line, polygon: Polygon) => {
-  const points = polygon
-  const lines = points.reduce((acc, curr, i) => {
-    const nextPoint = points[(i + 1) % points.length]
+export const getLinesFromPolygon = (polygon: Polygon) => {
+  return polygon.reduce((acc, curr, i) => {
+    const nextPoint = polygon[(i + 1) % polygon.length]
     return [
       ...acc,
       {
@@ -43,6 +42,9 @@ export const doesLineIntersectWithPolygon = (line: Line, polygon: Polygon) => {
       },
     ]
   }, [] as Line[])
+}
 
+export const doesLineIntersectWithPolygon = (line: Line, polygon: Polygon) => {
+  const lines = getLinesFromPolygon(polygon)
   return lines.some(polygonLine => getIntersection(polygonLine, line))
 }

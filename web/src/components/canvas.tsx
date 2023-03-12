@@ -37,7 +37,10 @@ export const Canvas = (
       sensors: Sensors
       traffic: Car[]
     }) => {
-      car.update()
+      car.update(traffic)
+
+      traffic.forEach(c => c.update([...traffic, car]))
+
       context.canvas.height = window.innerHeight
 
       context.save()
@@ -46,7 +49,9 @@ export const Canvas = (
       road.draw(context)
       car.draw(context)
 
-      sensors.draw(context, road.borders)
+      traffic.forEach(car => car.draw(context))
+
+      sensors.draw(context, road.borders, traffic)
 
       context.restore()
 
@@ -69,13 +74,20 @@ export const Canvas = (
 
       if (context) {
         const road = new Road(canvas.width / 2, canvas.width * 0.9, 3)
-        const car = new Car(
-          { x: road.getLaneCenterX(1), y: 100 },
-          { width: 30, height: 50 },
-          road.borders
-        )
+        const car = new Car({
+          center: { x: road.getLaneCenterX(1), y: 100 },
+          size: { width: 30, height: 50 },
+          roadBorders: road.borders,
+          controllable: true,
+        })
 
-        const traffic = []
+        const traffic = [
+          new Car({
+            center: { x: road.getLaneCenterX(2), y: 100 },
+            size: { width: 30, height: 50 },
+            roadBorders: road.borders,
+          }),
+        ]
 
         const sensors = new Sensors(car, Math.PI / 2, 50, 200)
         animate({ context, car, road, sensors, traffic })

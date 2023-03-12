@@ -1,7 +1,11 @@
 import { compact } from "lodash"
 import { Car } from "./car"
 import { Line, Point, SensorReading } from "./types"
-import { getIntersection, linearInterpolate } from "./utils"
+import {
+  getIntersection,
+  getLinesFromPolygon,
+  linearInterpolate,
+} from "./utils"
 
 export class Sensors {
   numRays: number
@@ -40,8 +44,9 @@ export class Sensors {
     })
   }
 
-  draw(context: CanvasRenderingContext2D, roadBorders: Line[]) {
+  draw(context: CanvasRenderingContext2D, roadBorders: Line[], traffic: Car[]) {
     this.#updateRays()
+
     this.rays.map((ray, index) => {
       const reading = this.readings[index]
 
@@ -66,11 +71,16 @@ export class Sensors {
       }
     })
 
-    this.readings = this.rays.map(ray => this.#read(ray, roadBorders))
+    this.readings = this.rays.map(ray =>
+      this.#read(ray, [
+        ...roadBorders,
+        ...traffic.map(car => getLinesFromPolygon(car.polygon)).flat(),
+      ])
+    )
   }
 
-  #read(ray: Line, roadBorders: Line[]) {
-    const touches = roadBorders
+  #read(ray: Line, lines: Line[]) {
+    const touches = lines
       .map(border => getIntersection(ray, border))
       .filter(Boolean)
 
