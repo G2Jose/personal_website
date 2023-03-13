@@ -1,3 +1,5 @@
+import { sortBy } from "lodash"
+import { Car } from "./car"
 import { Line, Point, SensorReading } from "./types"
 import { Polygon } from "./types"
 
@@ -55,4 +57,16 @@ export const getRGBA = (value: number) => {
   const G = R
   const B = value > 0 ? 0 : 255
   return "rgba(" + R + "," + G + "," + B + "," + alpha + ")"
+}
+
+let previousFurthest: Car | null = null
+export const getFurthestCar = (cars: Car[]) => {
+  const nonDamagedCars = cars.filter(car => !car.damaged)
+  const furthest = sortBy(nonDamagedCars, car => car.y)[0]
+
+  const currentFurthest = furthest ?? previousFurthest
+
+  previousFurthest = currentFurthest
+
+  return currentFurthest
 }

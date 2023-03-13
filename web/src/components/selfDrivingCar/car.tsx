@@ -29,45 +29,52 @@ class Car {
   damaged: boolean
   roadBorders: Line[]
 
+  color: string
+
   identifier: string
 
   neuralNetwork?: NeuralNetwork
 
   sensors: Sensors
 
+  type: "traffic" | "primary"
+
   constructor({
     center,
     size,
     roadBorders,
-    controllable,
+    color = "black",
+    type,
   }: {
     center: Point
     size: PolygonSize
     roadBorders: Line[]
-    controllable?: boolean
+    color?: string
+    type: "traffic" | "primary"
   }) {
     this.identifier = crypto.randomUUID()
-
+    this.type = type
     const { x, y } = center
     const { width, height } = size
     this.x = x
     this.y = y
     this.width = width
     this.height = height
+    this.color = color
 
     this.speed = 0
     this.acceleration = ACCELERATION
-    this.maxSpeed = controllable ? MAX_SPEED : MAX_SPEED_TRAFFIC
+    this.maxSpeed = type === "primary" ? MAX_SPEED : MAX_SPEED_TRAFFIC
     this.friction = FRICTION
 
     this.angle = 0
 
-    const controlType = controllable ? "keyboard" : "traffic-ai"
-
-    this.controls = new Controls(controlType)
+    this.controls = new Controls(
+      type === "primary" ? "primary-ai" : "traffic-ai"
+    )
     this.sensors = new Sensors(this, Math.PI / 2, 10, 200)
 
-    if (controlType === "keyboard") {
+    if (type === "primary") {
       this.neuralNetwork = new NeuralNetwork([this.sensors.numRays, 6, 4])
     }
 
@@ -101,7 +108,8 @@ class Car {
       ctx.lineTo(point.x, point.y)
     })
 
-    ctx.fillStyle = this.damaged ? "grey" : "black"
+    ctx.fillStyle =
+      this.damaged && this.type === "primary" ? "grey" : this.color
 
     ctx.fill()
   }
@@ -150,7 +158,7 @@ class Car {
   }
 
   #move() {
-    if (this.damaged) {
+    if (this.damaged && this.type === "primary") {
       return
     }
 

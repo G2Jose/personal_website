@@ -63,7 +63,7 @@ export class Visualizer {
       const x = Visualizer.#getNodeX(inputs, i, left, right)
       ctx.beginPath()
       ctx.arc(x, bottom, nodeRadius, 0, Math.PI * 2)
-      ctx.fillStyle = "black"
+      ctx.fillStyle = "#18171c"
       ctx.fill()
       ctx.beginPath()
       ctx.arc(x, bottom, nodeRadius * 0.6, 0, Math.PI * 2)
@@ -75,7 +75,7 @@ export class Visualizer {
       const x = Visualizer.#getNodeX(outputs, i, left, right)
       ctx.beginPath()
       ctx.arc(x, top, nodeRadius, 0, Math.PI * 2)
-      ctx.fillStyle = "black"
+      ctx.fillStyle = "#18171c"
       ctx.fill()
       ctx.beginPath()
       ctx.arc(x, top, nodeRadius * 0.6, 0, Math.PI * 2)

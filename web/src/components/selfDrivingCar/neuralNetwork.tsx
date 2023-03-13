@@ -41,8 +41,10 @@ export class Level {
 
 export class NeuralNetwork {
   levels: Level[]
+  identifier: string
 
   constructor(neuronCounts: number[]) {
+    this.identifier = crypto.randomUUID()
     this.levels = new Array(neuronCounts.length).fill(undefined).map((x, i) => {
       return new Level(neuronCounts[i], neuronCounts[i + 1])
     })

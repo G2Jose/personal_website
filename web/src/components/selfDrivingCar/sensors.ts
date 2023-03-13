@@ -44,32 +44,41 @@ export class Sensors {
     })
   }
 
-  draw(context: CanvasRenderingContext2D, roadBorders: Line[], traffic: Car[]) {
+  update(
+    context: CanvasRenderingContext2D,
+    roadBorders: Line[],
+    traffic: Car[],
+    visibility: "hidden" | "visible" = "hidden"
+  ) {
     this.#updateRays()
 
-    this.rays.map((ray, index) => {
-      const reading = this.readings[index]
+    if (visibility === "visible") {
+      context.globalAlpha = 0.2
+      this.rays.map((ray, index) => {
+        const reading = this.readings[index]
 
-      context.setLineDash([])
-      context.lineWidth = 2
-      context.strokeStyle = "#fff8d6"
-      context.beginPath()
-      context.moveTo(ray.start.x, ray.start.y)
-
-      if (reading) {
-        context.lineTo(reading.x, reading.y)
-        context.stroke()
-
-        context.strokeStyle = "red"
+        context.setLineDash([])
+        context.lineWidth = 2
+        context.strokeStyle = "#fff8d6"
         context.beginPath()
-        context.moveTo(reading.x, reading.y)
-        context.lineTo(ray.end.x, ray.end.y)
-        context.stroke()
-      } else {
-        context.lineTo(ray.end.x, ray.end.y)
-        context.stroke()
-      }
-    })
+        context.moveTo(ray.start.x, ray.start.y)
+
+        if (reading) {
+          context.lineTo(reading.x, reading.y)
+          context.stroke()
+
+          context.strokeStyle = "red"
+          context.beginPath()
+          context.moveTo(reading.x, reading.y)
+          context.lineTo(ray.end.x, ray.end.y)
+          context.stroke()
+        } else {
+          context.lineTo(ray.end.x, ray.end.y)
+          context.stroke()
+        }
+      })
+      context.globalAlpha = 1
+    }
 
     this.readings = this.rays.map(ray =>
       this.#read(ray, [
