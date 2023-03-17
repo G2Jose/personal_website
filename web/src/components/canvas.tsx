@@ -9,7 +9,13 @@ import { Car } from "./selfDrivingCar/car"
 import { NeuralNetwork } from "./selfDrivingCar/neuralNetwork"
 import { Road } from "./selfDrivingCar/road"
 import { Sensors } from "./selfDrivingCar/sensors"
-import { getFurthestCar } from "./selfDrivingCar/utils"
+import {
+  areNeuralNetworkSizesEqual,
+  getFittestCar,
+  restoreNeuralNetwork,
+  saveNeuralNetwork,
+  shouldSaveCarsNeuralNetwork,
+} from "./selfDrivingCar/utils"
 import { Visualizer } from "./selfDrivingCar/visualizer"
 
 const CAR_CANVAS_WIDTH = 200
@@ -31,6 +37,8 @@ export const Canvas = (
 
   const previousCarCanvasRef = useRef<HTMLCanvasElement | null>(null)
   const previousNNCanvasRef = useRef<HTMLCanvasElement | null>(null)
+
+  const fittestCarRef = useRef<Car | null>(null)
 
   const animateCar = useCallback(
     ({
@@ -54,12 +62,22 @@ export const Canvas = (
 
       carContext.save()
 
-      const furthestCar = getFurthestCar(cars)
-      if (neuralNetwork?.identifier !== furthestCar.neuralNetwork?.identifier) {
-        setNeuralNetwork(furthestCar.neuralNetwork)
+      const fittestCar = getFittestCar(cars)
+
+      if (fittestCarRef.current?.identifier !== fittestCar.identifier) {
+        fittestCarRef.current = fittestCar
       }
 
-      carContext.translate(0, -furthestCar.y + carContext.canvas.height * 0.7)
+      if (shouldSaveCarsNeuralNetwork(fittestCar, traffic)) {
+        console.log("saving new best neural network")
+        saveNeuralNetwork(fittestCar.neuralNetwork)
+      }
+
+      if (neuralNetwork?.identifier !== fittestCar.neuralNetwork?.identifier) {
+        setNeuralNetwork(fittestCar.neuralNetwork)
+      }
+
+      carContext.translate(0, -fittestCar.y + carContext.canvas.height * 0.7)
 
       road.draw(carContext)
 
@@ -69,7 +87,7 @@ export const Canvas = (
 
       carContext.globalAlpha = 1
 
-      furthestCar.draw(carContext)
+      fittestCar.draw(carContext)
 
       traffic.forEach(car => car.draw(carContext))
 
@@ -77,7 +95,7 @@ export const Canvas = (
         sensor.update(carContext, road.borders, traffic)
       )
 
-      furthestCar.sensors.update(carContext, road.borders, traffic, "visible")
+      fittestCar.sensors.update(carContext, road.borders, traffic, "visible")
 
       carContext.restore()
 
@@ -100,13 +118,27 @@ export const Canvas = (
 
       if (carContext) {
         const road = new Road(carCanvas.width / 2, carCanvas.width * 0.9, 3)
-        const cars = new Array(100).fill(undefined).map(x => {
-          return new Car({
+        const cars = new Array(1000).fill(undefined).map((x, i) => {
+          const car = new Car({
             center: { x: road.getLaneCenterX(1), y: 100 },
             size: { width: 30, height: 50 },
             roadBorders: road.borders,
             type: "primary",
           })
+          const storedNN: null | NeuralNetwork = restoreNeuralNetwork()
+
+          if (!storedNN) return car
+
+          if (
+            storedNN &&
+            areNeuralNetworkSizesEqual(car.neuralNetwork, storedNN)
+          ) {
+            car.neuralNetwork = storedNN
+            if (i > 0) {
+              NeuralNetwork.mutate(car.neuralNetwork, 0.2)
+            }
+          }
+          return car
         })
 
         const traffic = [
@@ -126,6 +158,27 @@ export const Canvas = (
           }),
           new Car({
             center: { x: road.getLaneCenterX(2), y: 200 },
+            size: { width: 30, height: 50 },
+            roadBorders: road.borders,
+            color: "red",
+            type: "traffic",
+          }),
+          new Car({
+            center: { x: road.getLaneCenterX(1), y: -400 },
+            size: { width: 30, height: 50 },
+            roadBorders: road.borders,
+            color: "red",
+            type: "traffic",
+          }),
+          new Car({
+            center: { x: road.getLaneCenterX(0), y: -150 },
+            size: { width: 30, height: 50 },
+            roadBorders: road.borders,
+            color: "red",
+            type: "traffic",
+          }),
+          new Car({
+            center: { x: road.getLaneCenterX(2), y: -175 },
             size: { width: 30, height: 50 },
             roadBorders: road.borders,
             color: "red",

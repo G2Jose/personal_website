@@ -10,6 +10,8 @@ const MAX_SPEED_TRAFFIC = MAX_SPEED / 2
 const FRICTION = 0.02
 const ACCELERATION = 0.2
 
+const NUM_SENSORS = 5
+
 class Car {
   x: number
   y: number
@@ -72,7 +74,7 @@ class Car {
     this.controls = new Controls(
       type === "primary" ? "primary-ai" : "traffic-ai"
     )
-    this.sensors = new Sensors(this, Math.PI / 2, 10, 200)
+    this.sensors = new Sensors(this, Math.PI / 2, NUM_SENSORS, 200)
 
     if (type === "primary") {
       this.neuralNetwork = new NeuralNetwork([this.sensors.numRays, 6, 4])
@@ -86,6 +88,7 @@ class Car {
   update(traffic: Car[]) {
     this.damaged = this.#assessDamaged(traffic) || this.damaged
     this.#move()
+
     this.polygon = this.#createPolygon()
 
     if (this.neuralNetwork) {
@@ -160,7 +163,7 @@ class Car {
     }
 
     if (this.neuralNetwork) {
-      const outputs = this.neuralNetwork.getOutputs()
+      const outputs = NeuralNetwork.getOutputs(this.neuralNetwork)
       this.controls.forward = outputs[0] > 0
       this.controls.reverse = outputs[1] > 0
       this.controls.left = outputs[2] > 0

@@ -1,3 +1,5 @@
+import { linearInterpolate } from "./utils"
+
 export class Level {
   inputs: number[]
   outputs: number[]
@@ -50,9 +52,8 @@ export class NeuralNetwork {
     })
   }
 
-  getOutputs() {
-    const lastLevel = this.levels[this.levels.length - 1]
-
+  static getOutputs(network: NeuralNetwork) {
+    const lastLevel = network.levels[network.levels.length - 1]
     return lastLevel.outputs
   }
 
@@ -62,5 +63,21 @@ export class NeuralNetwork {
 
       return outputs
     }, inputs)
+  }
+
+  static mutate(network: NeuralNetwork, fraction: number) {
+    network.levels = network.levels.map(level => {
+      return {
+        ...level,
+        biases: level.biases.map(bias =>
+          linearInterpolate(bias, Math.random() * 2 - 1, fraction)
+        ),
+        weights: level.weights.map(connection => {
+          return connection.map(weight =>
+            linearInterpolate(weight, Math.random() * 2 - 1, fraction)
+          )
+        }),
+      }
+    })
   }
 }

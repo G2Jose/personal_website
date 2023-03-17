@@ -1,5 +1,6 @@
 import { sortBy } from "lodash"
 import { Car } from "./car"
+import { NeuralNetwork } from "./neuralNetwork"
 import { Line, Point, SensorReading } from "./types"
 import { Polygon } from "./types"
 
@@ -60,7 +61,7 @@ export const getRGBA = (value: number) => {
 }
 
 let previousFurthest: Car | null = null
-export const getFurthestCar = (cars: Car[]) => {
+export const getFittestCar = (cars: Car[]) => {
   const nonDamagedCars = cars.filter(car => !car.damaged)
   const furthest = sortBy(nonDamagedCars, car => car.y)[0]
 
@@ -69,4 +70,34 @@ export const getFurthestCar = (cars: Car[]) => {
   previousFurthest = currentFurthest
 
   return currentFurthest
+}
+
+export const saveNeuralNetwork = (input?: NeuralNetwork) => {
+  if (input) localStorage.setItem("bestNeuralNetwork", JSON.stringify(input))
+}
+
+export const shouldSaveCarsNeuralNetwork = (car: Car, traffic: Car[]) => {
+  return !car.damaged && traffic.every(trafficCar => trafficCar.y > car.y)
+}
+
+export const restoreNeuralNetwork = () => {
+  const networkData = JSON.parse(
+    localStorage.getItem("bestNeuralNetwork") || "null"
+  )
+  return networkData
+}
+
+export const areNeuralNetworkSizesEqual = (
+  nn1?: NeuralNetwork,
+  nn2?: NeuralNetwork
+) => {
+  if (!nn1 || !nn2) return false
+  return (
+    nn1.levels.every(
+      (level, i) => level.inputs.length === nn2.levels[i].inputs.length
+    ) &&
+    nn1.levels.every(
+      (level, i) => level.outputs.length === nn2.levels[i].outputs.length
+    )
+  )
 }
