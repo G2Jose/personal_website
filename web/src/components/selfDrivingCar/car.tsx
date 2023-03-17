@@ -43,7 +43,7 @@ class Car {
     center,
     size,
     roadBorders,
-    color = "black",
+    color = "blue",
     type,
   }: {
     center: Point
@@ -84,7 +84,7 @@ class Car {
   }
 
   update(traffic: Car[]) {
-    this.damaged = this.#assessDamaged(traffic)
+    this.damaged = this.#assessDamaged(traffic) || this.damaged
     this.#move()
     this.polygon = this.#createPolygon()
 
@@ -93,10 +93,7 @@ class Car {
         reading?.offset ? 1 - reading.offset : 0
       )
 
-      const neuralNetworkOutputs = NeuralNetwork.feedForward(
-        offsets,
-        this.neuralNetwork
-      )
+      NeuralNetwork.feedForward(offsets, this.neuralNetwork)
     }
   }
 
