@@ -15,6 +15,7 @@ const config: GatsbyConfig = {
       twitter: `george__jose`,
     },
   },
+  flags: { DEV_SSR: false },
   plugins: [
     `gatsby-plugin-typescript`,
     `gatsby-plugin-image`,

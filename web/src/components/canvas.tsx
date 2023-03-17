@@ -18,25 +18,55 @@ import {
 } from "./selfDrivingCar/utils"
 import { Visualizer } from "./selfDrivingCar/visualizer"
 
-const CAR_CANVAS_WIDTH = 200
-const NN_CANVAS_WIDTH = window.innerWidth - CAR_CANVAS_WIDTH
-
-const isBrowser = typeof window !== "undefined"
-
-const CANVAS_HEIGHT = isBrowser ? window.innerHeight : "700px"
-
 export const Canvas = (
   props: DetailedHTMLProps<
     CanvasHTMLAttributes<HTMLCanvasElement>,
     HTMLCanvasElement
   >
 ) => {
+  const CAR_CANVAS_WIDTH = 200
+
+  const NN_CANVAS_WIDTH = Math.min(
+    typeof window !== "undefined" ? window.innerWidth - CAR_CANVAS_WIDTH : 300,
+    500
+  )
+
+  const CANVAS_HEIGHT = typeof window !== "undefined" ? window.innerHeight : 700
+
   const [neuralNetwork, setNeuralNetwork] = useState<NeuralNetwork | undefined>(
     undefined
   )
 
   const previousCarCanvasRef = useRef<HTMLCanvasElement | null>(null)
   const previousNNCanvasRef = useRef<HTMLCanvasElement | null>(null)
+
+  if (
+    previousCarCanvasRef.current &&
+    previousCarCanvasRef.current.width !== CAR_CANVAS_WIDTH
+  ) {
+    previousCarCanvasRef.current.width = CAR_CANVAS_WIDTH
+  }
+
+  if (
+    previousNNCanvasRef.current &&
+    previousNNCanvasRef.current.width !== NN_CANVAS_WIDTH
+  ) {
+    previousNNCanvasRef.current.width = NN_CANVAS_WIDTH
+  }
+
+  if (
+    previousCarCanvasRef.current &&
+    previousCarCanvasRef.current.height !== CANVAS_HEIGHT
+  ) {
+    previousCarCanvasRef.current.height = CANVAS_HEIGHT
+  }
+
+  if (
+    previousNNCanvasRef.current &&
+    previousNNCanvasRef.current.height !== CANVAS_HEIGHT
+  ) {
+    previousNNCanvasRef.current.height = CANVAS_HEIGHT
+  }
 
   const fittestCarRef = useRef<Car | null>(null)
 
