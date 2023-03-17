@@ -111,7 +111,21 @@ export const Canvas = (
 
         const traffic = [
           new Car({
-            center: { x: road.getLaneCenterX(1), y: 5 },
+            center: { x: road.getLaneCenterX(1), y: -70 },
+            size: { width: 30, height: 50 },
+            roadBorders: road.borders,
+            color: "red",
+            type: "traffic",
+          }),
+          new Car({
+            center: { x: road.getLaneCenterX(0), y: 150 },
+            size: { width: 30, height: 50 },
+            roadBorders: road.borders,
+            color: "red",
+            type: "traffic",
+          }),
+          new Car({
+            center: { x: road.getLaneCenterX(2), y: 200 },
             size: { width: 30, height: 50 },
             roadBorders: road.borders,
             color: "red",
