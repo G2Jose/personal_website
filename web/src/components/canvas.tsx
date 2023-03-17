@@ -13,7 +13,7 @@ import { getFurthestCar } from "./selfDrivingCar/utils"
 import { Visualizer } from "./selfDrivingCar/visualizer"
 
 const CAR_CANVAS_WIDTH = 200
-const NN_CANVAS_WIDTH = 400
+const NN_CANVAS_WIDTH = window.innerWidth - CAR_CANVAS_WIDTH
 
 const isBrowser = typeof window !== "undefined"
 
