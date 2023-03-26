@@ -1,5 +1,5 @@
 ---
-title: Optimizing rendering performance in react
+title: Optimizing rendering performance in react native
 date: "2020-06-01T22:12:03.284Z"
 description: Identifying and addressing performance bottlenecks on an app which uses React Native + Redux.
 image: "./img-5.png"
