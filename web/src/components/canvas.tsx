@@ -214,6 +214,53 @@ export const Canvas = (
             color: "red",
             type: "traffic",
           }),
+
+          new Car({
+            center: { x: road.getLaneCenterX(2), y: -500 },
+            size: { width: 30, height: 50 },
+            roadBorders: road.borders,
+            color: "red",
+            type: "traffic",
+          }),
+
+          new Car({
+            center: { x: road.getLaneCenterX(0), y: -700 },
+            size: { width: 30, height: 50 },
+            roadBorders: road.borders,
+            color: "red",
+            type: "traffic",
+          }),
+
+          new Car({
+            center: { x: road.getLaneCenterX(1), y: -1000 },
+            size: { width: 30, height: 50 },
+            roadBorders: road.borders,
+            color: "red",
+            type: "traffic",
+          }),
+
+          new Car({
+            center: { x: road.getLaneCenterX(1), y: -1200 },
+            size: { width: 30, height: 50 },
+            roadBorders: road.borders,
+            color: "red",
+            type: "traffic",
+          }),
+
+          new Car({
+            center: { x: road.getLaneCenterX(0), y: -1100 },
+            size: { width: 30, height: 50 },
+            roadBorders: road.borders,
+            color: "red",
+            type: "traffic",
+          }),
+          new Car({
+            center: { x: road.getLaneCenterX(2), y: -1300 },
+            size: { width: 30, height: 50 },
+            roadBorders: road.borders,
+            color: "red",
+            type: "traffic",
+          }),
         ]
 
         const sensors = cars.map(car => car.sensors)
