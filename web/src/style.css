@@ -74,7 +74,7 @@ pre[class*="language-"] {
 }
 
 [data-theme="dark"] {
-  --color-primary: #b584d6;
+  --color-primary: #f60773;
   --color-text: white;
   --color-text-light: #d4bbe5;
   --color-heading: white;
