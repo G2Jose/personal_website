@@ -9,7 +9,7 @@ const BlogIndex = ({
   location,
 }: {
   data: PageProps<Queries.IndexPageQuery>["data"]
-  location: unknown
+  location: Location
 }) => {
   const siteTitle = data.site?.siteMetadata?.title || ""
   const posts = data.allMarkdownRemark.nodes
