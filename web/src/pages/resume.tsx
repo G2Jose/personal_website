@@ -39,12 +39,6 @@ const H4 = ({ children }: { children: string }) => (
   </div>
 )
 
-const H4IfSmallDeviceElseH3 = ({ children }: { children: string }) => {
-  const isSmallDevice = useWindowDimensions().isSmallDevice
-
-  return isSmallDevice ? <H4>{children}</H4> : <H3>{children}</H3>
-}
-
 const List = ({ children }: { children: React.ReactNode }) => (
   <ul
     style={{ marginBottom: 16, marginTop: 0, marginLeft: 18, paddingLeft: 0 }}
@@ -108,7 +102,7 @@ const Resume = ({
           <Block>
             <Row>
               <H3>Senior Engineering Manager</H3>
-              <H4IfSmallDeviceElseH3>&apos;22 – present</H4IfSmallDeviceElseH3>
+              <H4>&apos;22 – present</H4>
             </Row>
             <List>
               <ListItem>
@@ -121,9 +115,7 @@ const Resume = ({
           <Block>
             <Row>
               <H3>Engineering Manager</H3>
-              <H4IfSmallDeviceElseH3>
-                Core Team, &apos;19 – &apos;22
-              </H4IfSmallDeviceElseH3>
+              <H4>Core Team, &apos;19 – &apos;22</H4>
             </Row>
             <List>
               <ListItem>
@@ -169,9 +161,7 @@ const Resume = ({
           <Block>
             <Row>
               <H3>Engineering Lead</H3>
-              <H4IfSmallDeviceElseH3>
-                Growth Team, &apos;18 – &apos;19
-              </H4IfSmallDeviceElseH3>
+              <H4>Growth Team, &apos;18 – &apos;19</H4>
             </Row>
             <List>
               <ListItem>
@@ -210,9 +200,7 @@ const Resume = ({
           <Block>
             <Row>
               <H3>Software Engineer</H3>
-              <H4IfSmallDeviceElseH3>
-                Drop Engineering Team, &apos;18
-              </H4IfSmallDeviceElseH3>
+              <H4>Drop Engineering Team, &apos;18</H4>
             </Row>
             <List>
               <ListItem>
@@ -259,7 +247,7 @@ const Resume = ({
           <Block>
             <Row>
               <H3>Senior Consultant</H3>
-              <H4IfSmallDeviceElseH3>&apos;17 – &apos;18</H4IfSmallDeviceElseH3>
+              <H4>&apos;17 – &apos;18</H4>
             </Row>
             <List>
               <ListItem>
@@ -297,7 +285,7 @@ const Resume = ({
           <Block>
             <Row>
               <H3>Consultant</H3>
-              <H4IfSmallDeviceElseH3>&apos;16 – &apos;17</H4IfSmallDeviceElseH3>
+              <H4>&apos;16 – &apos;17</H4>
             </Row>
             <List>
               <ListItem>Solutions Engineer, PC Optimum</ListItem>
@@ -315,7 +303,7 @@ const Resume = ({
           <Block>
             <Row>
               <H3>Business Technology Analyst</H3>
-              <H4IfSmallDeviceElseH3>&apos;15 – &apos;16</H4IfSmallDeviceElseH3>
+              <H4>&apos;15 – &apos;16</H4>
             </Row>
             <List>
               <ListItem>
