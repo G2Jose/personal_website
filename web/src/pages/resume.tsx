@@ -3,6 +3,7 @@ import Layout from "../components/layout"
 import React from "react"
 import Seo from "../components/seo"
 import { PageProps, graphql } from "gatsby"
+import { useWindowDimensions } from "../hooks/useWindowDimensions"
 
 const Block = ({
   children,
@@ -32,6 +33,17 @@ const H3 = ({ children }: { children: string }) => (
   </div>
 )
 
+const H4 = ({ children }: { children: string }) => (
+  <div style={{ color: "#E23373", fontSize: 20, fontWeight: "bold" }}>
+    {children}
+  </div>
+)
+
+const H4IfSmallDeviceElseH3 = ({ children }: { children: string }) => {
+  const isSmallDevice = useWindowDimensions().isSmallDevice
+  return isSmallDevice ? <H4>{children}</H4> : <H3>{children}</H3>
+}
+
 const List = ({ children }: { children: React.ReactNode }) => (
   <ul
     style={{ marginBottom: 16, marginTop: 0, marginLeft: 18, paddingLeft: 0 }}
@@ -44,19 +56,23 @@ const ListItem = ({ children }: { children: React.ReactNode }) => (
   <li style={{ marginBottom: 4 }}>{children}</li>
 )
 
-const Row = ({ children }: { children: React.ReactNode[] }) => (
-  <div
-    style={{
-      flexDirection: "row",
-      display: "flex",
-      justifyContent: "space-between",
-    }}
-  >
-    {children.map((child, i) => (
-      <React.Fragment key={i}>{child}</React.Fragment>
-    ))}
-  </div>
-)
+const Row = ({ children }: { children: React.ReactNode[] }) => {
+  const dimensions = useWindowDimensions()
+
+  return (
+    <div
+      style={{
+        flexDirection: dimensions.isSmallDevice ? "row" : "column",
+        display: "flex",
+        justifyContent: "space-between",
+      }}
+    >
+      {children.map((child, i) => (
+        <React.Fragment key={i}>{child}</React.Fragment>
+      ))}
+    </div>
+  )
+}
 
 const Resume = ({
   location,
@@ -91,7 +107,7 @@ const Resume = ({
           <Block>
             <Row>
               <H3>Senior Engineering Manager</H3>
-              <H3>&apos;22 – present</H3>
+              <H4IfSmallDeviceElseH3>&apos;22 – present</H4IfSmallDeviceElseH3>
             </Row>
             <List>
               <ListItem>
@@ -104,7 +120,9 @@ const Resume = ({
           <Block>
             <Row>
               <H3>Engineering Manager</H3>
-              <H3>Core Team, &apos;19 – &apos;22</H3>
+              <H4IfSmallDeviceElseH3>
+                Core Team, &apos;19 – &apos;22
+              </H4IfSmallDeviceElseH3>
             </Row>
             <List>
               <ListItem>
@@ -150,7 +168,9 @@ const Resume = ({
           <Block>
             <Row>
               <H3>Engineering Lead</H3>
-              <H3>Growth Team, &apos;18 – &apos;19</H3>
+              <H4IfSmallDeviceElseH3>
+                Growth Team, &apos;18 – &apos;19
+              </H4IfSmallDeviceElseH3>
             </Row>
             <List>
               <ListItem>
@@ -189,7 +209,9 @@ const Resume = ({
           <Block>
             <Row>
               <H3>Software Engineer</H3>
-              <H3>Drop Engineering Team, &apos;18</H3>
+              <H4IfSmallDeviceElseH3>
+                Drop Engineering Team, &apos;18
+              </H4IfSmallDeviceElseH3>
             </Row>
             <List>
               <ListItem>
@@ -236,7 +258,7 @@ const Resume = ({
           <Block>
             <Row>
               <H3>Senior Consultant</H3>
-              <H3>&apos;17 – &apos;18</H3>
+              <H4IfSmallDeviceElseH3>&apos;17 – &apos;18</H4IfSmallDeviceElseH3>
             </Row>
             <List>
               <ListItem>
@@ -274,7 +296,7 @@ const Resume = ({
           <Block>
             <Row>
               <H3>Consultant</H3>
-              <H3>&apos;16 – &apos;17</H3>
+              <H4IfSmallDeviceElseH3>&apos;16 – &apos;17</H4IfSmallDeviceElseH3>
             </Row>
             <List>
               <ListItem>Solutions Engineer, PC Optimum</ListItem>
@@ -292,7 +314,7 @@ const Resume = ({
           <Block>
             <Row>
               <H3>Business Technology Analyst</H3>
-              <H3>&apos;15 – &apos;16</H3>
+              <H4IfSmallDeviceElseH3>&apos;15 – &apos;16</H4IfSmallDeviceElseH3>
             </Row>
             <List>
               <ListItem>
