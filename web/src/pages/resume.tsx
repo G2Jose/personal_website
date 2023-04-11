@@ -343,7 +343,9 @@ const Resume = ({
         <H1>Personal Projects</H1>
         <Block>
           <List>
-            <ListItem>A Journal A Day</ListItem>
+            <ListItem>
+              <a href="https://ajournaladay.com/">A Journal A Day</a>
+            </ListItem>
             <Block>
               <List>
                 <ListItem>
@@ -353,7 +355,11 @@ const Resume = ({
               </List>
             </Block>
 
-            <ListItem>Communauto Watcher</ListItem>
+            <ListItem>
+              <a href="https://www.communautowatcher.com/">
+                Communauto Watcher
+              </a>
+            </ListItem>
             <Block>
               <List>
                 <ListItem>
