@@ -41,6 +41,7 @@ const H4 = ({ children }: { children: string }) => (
 
 const H4IfSmallDeviceElseH3 = ({ children }: { children: string }) => {
   const isSmallDevice = useWindowDimensions().isSmallDevice
+
   return isSmallDevice ? <H4>{children}</H4> : <H3>{children}</H3>
 }
 
@@ -62,7 +63,7 @@ const Row = ({ children }: { children: React.ReactNode[] }) => {
   return (
     <div
       style={{
-        flexDirection: dimensions.isSmallDevice ? "row" : "column",
+        flexDirection: dimensions.isSmallDevice ? "column" : "row",
         display: "flex",
         justifyContent: "space-between",
       }}

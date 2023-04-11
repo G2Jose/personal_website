@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const isSmallDevice = (width: number) => {
   if (typeof document === "undefined") return true
   return (
-    width > parseFloat(getComputedStyle(document.documentElement).fontSize) * 42
+    width < parseFloat(getComputedStyle(document.documentElement).fontSize) * 42
   )
 }
 
