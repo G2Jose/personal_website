@@ -44,15 +44,16 @@ const Bio = () => {
       {author?.name && (
         <>
           <p>
-            Written by <strong>{author.name}</strong>, {author?.summary || null}
-            . <br />
-            All thoughts presented here are my own.{" "}
+            Written by <strong>{author.name}</strong>
+            {`${author.summary ? `, ${author.summary}` : ""}`}
+            All thoughts presented here are my own
+            <br />
             <a href="https://www.linkedin.com/in/g2jose">Linkedin</a> |{" "}
             <a href="https://github.com/G2Jose">Github</a> |{" "}
             <a href="mailto:bigness_kudos00@icloud.com?body=%0D%0Asource%3A%20George's%20Blog">
               Email
-            </a>
-            .
+            </a>{" "}
+            | <a href="resume">Resume</a>
           </p>
         </>
       )}

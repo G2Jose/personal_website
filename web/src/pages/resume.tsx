@@ -84,9 +84,9 @@ const Resume = ({
         <Block>
           <List>
             <ListItem>
-              Product-minded generalist with years of experience in various
-              capacities – technical leadership, people, process & project
-              management, hands-on software development
+              Product-minded engineering generalist with years of experience in
+              various capacities – technical leadership, people, process &
+              project management, hands-on software development
             </ListItem>
             <ListItem>
               Extensive experience leading teams and executing complex,
@@ -106,8 +106,8 @@ const Resume = ({
             </Row>
             <List>
               <ListItem>
-                Managing 2 high performing full-stack, product engineering teams
-                at Drop
+                Managed 2 high performing, full-stack product engineering teams
+                and their roadmaps
               </ListItem>
             </List>
           </Block>
