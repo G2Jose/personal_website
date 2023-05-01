@@ -1,6 +1,6 @@
 ---
 title: Exploring User Sentiment On Apps Using AI
-date: "2023-05-01T03:08:47.473Z"
+date: "2023-04-30T03:05:47.473Z"
 description: Building tools to analyze user sentiment from app reviews using OpenAI / ChatGPT.
 image: "./skip-uber-comparison.png"
 ---
