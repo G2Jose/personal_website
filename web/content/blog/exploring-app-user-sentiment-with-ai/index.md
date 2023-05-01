@@ -1,6 +1,6 @@
 ---
 title: Exploring User Sentiment On Apps Using AI
-date: "2023-04-30T22:12:03.284Z"
+date: "2023-05-01T03:08:47.473Z"
 description: Building tools to analyze user sentiment from app reviews using OpenAI / ChatGPT.
 image: "./skip-uber-comparison.png"
 ---
@@ -15,7 +15,7 @@ App reviews are a great way of understanding how your users feel about your prod
 
 I haven't seen very many simple, free, easy to use tools to help you understand how users are feeling about your app over time, and how this compares to your competitors. Most tools at least require you to sign up, and many require you to pay for things like sentiment analysis.
 
-I figured there might be an opportunity for an easy to use, conversational tool that helps app publishers understand:
+I figured there might be an opportunity for an easy to use (maybe even conversational?) tool that helps app developers understand:
 
 - General user sentiment on their app
 - Common positive and negative themes coming up
