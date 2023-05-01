@@ -41,7 +41,7 @@ Now I had to figure out a way to do this programmatically. For this I'd need:
 - A way to call OpenAI
 - Some way of presenting the data
 
-Apple provides what feels like an old iTunes RSS that returns reviews or items. This also seems to work with apps, and appending `/json` makes it return data in json format. This is accessible at `https://itunes.apple.com/${region}/rss/customerreviews/id=${appId}/sortBy=mostRecent/json`.
+Apple provides what feels like an old iTunes RSS that returns reviews on content. This also seems to work with apps, and appending `/json` makes it return data in json format. This is accessible at `https://itunes.apple.com/${region}/rss/customerreviews/id=${appId}/sortBy=mostRecent/json`.
 
 Calling OpenAI was pretty simple to do using [their official npm package](https://www.npmjs.com/package/openai).
 
