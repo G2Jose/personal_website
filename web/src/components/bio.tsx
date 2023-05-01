@@ -44,9 +44,7 @@ const Bio = () => {
       {author?.name && (
         <>
           <p>
-            Written by <strong>{author.name}</strong>
-            {`${author.summary ? `, ${author.summary}` : ""}`}
-            All thoughts presented here are my own
+            Written by <strong>{author.name}</strong>. {author.summary}.
             <br />
             <a href="https://www.linkedin.com/in/g2jose">Linkedin</a> |{" "}
             <a href="https://github.com/G2Jose">Github</a> |{" "}

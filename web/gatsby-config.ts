@@ -7,7 +7,7 @@ const config: GatsbyConfig = {
     title: `George's Personal Blog`,
     author: {
       name: `George Jose`,
-      summary: ``,
+      summary: `All thoughts presented here are my own`,
     },
     description: `George Jose's personal blog`,
     siteUrl,
