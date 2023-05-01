@@ -64,7 +64,7 @@ pre[class*="language-"] {
   --fontSize-5: 2.074rem;
   --fontSize-6: 2.488rem;
   --fontSize-7: 2.986rem;
-  --color-primary: #f60773;
+  --color-primary: #dc2c6b;
   --color-text: #2e353f;
   --color-text-light: #4f5969;
   --color-heading: #1a202c;
@@ -74,7 +74,7 @@ pre[class*="language-"] {
 }
 
 [data-theme="dark"] {
-  --color-primary: #f60773;
+  --color-primary: #dc2c6b;
   --color-text: white;
   --color-text-light: #d4bbe5;
   --color-heading: white;
@@ -194,7 +194,7 @@ ol {
   margin-right: var(--spacing-0);
   padding: var(--spacing-0);
   margin-bottom: var(--spacing-8);
-  list-style-position: outside;
+  list-style-position: inside;
   list-style-image: none;
 }
 

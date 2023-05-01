@@ -53,7 +53,7 @@ const Bio = () => {
             <a href="mailto:bigness_kudos00@icloud.com?body=%0D%0Asource%3A%20George's%20Blog">
               Email
             </a>{" "}
-            | <a href="resume">Resume</a>
+            | <a href="/resume">Resume</a>
           </p>
         </>
       )}
