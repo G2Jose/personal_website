@@ -47,7 +47,7 @@ Calling OpenAI was pretty simple to do using [their official npm package](https:
 
 [Next.js](https://nextjs.org/) is something I've wanted to explore, so I chose this as the platform to build on.
 
-I ended up with a web app where you could visit https://appreviewsai.com/apps/$APP_ID to see a list of user reviews over the past two months (this can be easily extended to support custom date ranges). A lazy loaded component calls the OpenAI `gpt-3.5-turbo` model to fetch the summary and display it.
+I ended up with a web app where you could visit `https://appreviewsai.com/apps/$APP_ID` to see a list of user reviews over the past two months (this can be easily extended to support custom date ranges). A lazy loaded component calls the OpenAI `gpt-3.5-turbo` model to fetch the summary and display it.
 
 At this point I ran into a few problems:
 
