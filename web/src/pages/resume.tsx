@@ -178,7 +178,7 @@ const Resume = ({
               <Block>
                 <List>
                   <ListItem>
-                    Typescript: made the case for,got buyin and spearheaded
+                    Typescript: made the case for, got buy-in and spearheaded
                     migration; built internal tooling to track its adoption and
                     assist with incremental migration; defined best practices
                     and internal constructs to effectively write typesafe code
@@ -218,26 +218,6 @@ const Resume = ({
                 also built tooling to enable anyone to quickly and safely
                 release code
               </ListItem>
-
-              <Block>
-                <List>
-                  <ListItem>
-                    Typescript: made the case for,got buyin and spearheaded
-                    migration; built internal tooling to track its adoption and
-                    assist with incremental migration; defined best practices
-                    and internal constructs to effectively write typesafe code
-                  </ListItem>
-                  <ListItem>
-                    Continuous Deployment: built tooling to continuously deploy
-                    merged app code to a staging environment
-                  </ListItem>
-                  <ListItem>
-                    Static code analysis: built internal rules for eslint &
-                    rubocop; rules rely on AST analysis to flag certain types of
-                    problematic code
-                  </ListItem>
-                </List>
-              </Block>
             </List>
           </Block>
         </Block>

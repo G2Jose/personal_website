@@ -41,7 +41,7 @@ Now I had to figure out a way to do this programmatically. For this I'd need:
 - A way to call OpenAI
 - Some way of presenting the data
 
-Apple provides what feels like an old iTunes RSS that returns reviews on content. This also seems to work with apps, and appending `/json` makes it return data in json format. This is accessible at `https://itunes.apple.com/${region}/rss/customerreviews/id=${appId}/sortBy=mostRecent/json`.
+Apple provides what feels like an old iTunes RSS feed that returns reviews on content. This also seems to work with apps, and appending `/json` makes it return data in json format. This is accessible at `https://itunes.apple.com/${region}/rss/customerreviews/id=${appId}/sortBy=mostRecent/json`.
 
 Calling OpenAI was pretty simple to do using [their official npm package](https://www.npmjs.com/package/openai).
 
@@ -51,7 +51,7 @@ I ended up with a web app where you could visit `https://appreviewsai.com/apps/$
 
 At this point I ran into a few problems:
 
-- The context window for GPT 3.5 as of now is ~4k tokens. This meant that it would work fine for many apps, but would break apart for extremely popular apps like TikTok / Instagram, which receive a ton of reviews each day. This should be solvable through sampling.
+- The context window for GPT 3.5 as of now is ~4k tokens. This meant that it would work fine for many apps, but would break for extremely popular apps like TikTok / Instagram, which receive a ton of reviews each day. This should be solvable through sampling.
 - This worked very reliably during local development, but would sometimes fail when deployed to [vercel](https://vercel.com/?utm_source=google&utm_medium=cpc&utm_campaign=17166484769&utm_campaign_id=17166484769&utm_term=vercel&utm_content=134252114537_596484707957&gad=1&gclid=CjwKCAjwo7iiBhAEEiwAsIxQET331dd3LgGlGu6GXstSMtpB9EdDjsZoivblx6t__GGAgiFsL5jQ6hoCBIQQAvD_BwE). This turned out to be caused by [a 10 second timeout limit they enforce on their free plan](https://vercel.com/docs/concepts/limits/overview). I was able to get past this by simply upgrading to a trial of their pro plan which extends this to 60s.
 - For the vast majority of apps out there, users don't write new reviews every few seconds. This meant I was calling (and paying for) more OpenAI API calls than I needed to. I solved for this by setting up a [supabase database](https://supabase.com/database) and returning cached data unless there are new reviews since the last call. (Side note: I was very impressed with the [Ask Supabase AI feature](https://supabase.com/blog/chatgpt-supabase-docs) that allowed me to practically ask it to write the code I needed. This definitely feels like the future of all kinds of documentation!)
 
