@@ -52,12 +52,12 @@
   "scripts": {
     "build": "gatsby build",
     "clean": "gatsby clean",
-    "develop": "gatsby develop",
+    "develop": "gatsby develop --host=0.0.0.0",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "lint:fix": "npm run lint -- --fix",
     "lint": "eslint --ignore-path .gitignore .",
     "serve": "gatsby serve",
-    "start": "gatsby develop",
+    "start": "gatsby develop --host=0.0.0.0",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
 }

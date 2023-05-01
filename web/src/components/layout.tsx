@@ -11,7 +11,6 @@ const Layout = ({
   title?: string | null
   children: React.ReactNode
 }) => {
-  console.log("location", location)
   const rootPath = `${__PATH_PREFIX__}/`
   const isRootPath = location.pathname === rootPath
   let header

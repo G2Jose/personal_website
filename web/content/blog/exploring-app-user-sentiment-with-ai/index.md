@@ -53,19 +53,21 @@ At this point I ran into a few problems:
 
 - The context window for GPT 3.5 as of now is ~4k tokens. This meant that it would work fine for many apps, but would break apart for extremely popular apps like TikTok / Instagram, which receive a ton of reviews each day. This should be solvable through sampling.
 - This worked very reliably during local development, but would sometimes fail when deployed to [vercel](https://vercel.com/?utm_source=google&utm_medium=cpc&utm_campaign=17166484769&utm_campaign_id=17166484769&utm_term=vercel&utm_content=134252114537_596484707957&gad=1&gclid=CjwKCAjwo7iiBhAEEiwAsIxQET331dd3LgGlGu6GXstSMtpB9EdDjsZoivblx6t__GGAgiFsL5jQ6hoCBIQQAvD_BwE). This turned out to be caused by [a 10 second timeout limit they enforce on their free plan](https://vercel.com/docs/concepts/limits/overview). I was able to get past this by simply upgrading to a trial of their pro plan which extends this to 60s.
-- For the vast majority of apps out there, users don't write new reviews every few seconds. This meant I was calling (and paying for) more OpenAI API calls than I needed to. I solved for this by setting up a [supabase database](https://supabase.com/database). (Side note: I was very impressed with the [Ask Supabase AI feature](https://supabase.com/blog/chatgpt-supabase-docs) that allowed me to practically ask it to write the code I needed. This is definitely the future of all kinds of documentation.)
+- For the vast majority of apps out there, users don't write new reviews every few seconds. This meant I was calling (and paying for) more OpenAI API calls than I needed to. I solved for this by setting up a [supabase database](https://supabase.com/database) and returning cached data unless there are new reviews since the last call. (Side note: I was very impressed with the [Ask Supabase AI feature](https://supabase.com/blog/chatgpt-supabase-docs) that allowed me to practically ask it to write the code I needed. This definitely feels like the future of all kinds of documentation!)
 
 ### 2. ChatGPT Plugin
 
-At this point I'd accomplished some of what I wanted to do. It did not however support the uase case of comparing sentiment on multiple apps very elegantly. I also didn't want to spend the time to build things like UI elements to allow for sorting, filtering, changing date ranges etc. A more conversational UX would be ideal.
+At this point I'd accomplished some of what I wanted to do. It did not however support the uase case of comparing sentiment on multiple apps very elegantly, nor did it have an interface for searching for apps. I also didn't want to spend the time to build things like UI elements to allow for sorting, filtering, changing date ranges etc. A conversational UX would solve all of these problems and more.
 
 Enter ChatGPT plugins, which I got developer access to very recently. Plugins are a way of extending what ChatGPT can do out of the box. This feature allows you to expose APIs for ChatGPT to intelligently call based on context.
 
 Reading [the docs](https://platform.openai.com/docs/plugins/getting-started), I realized I could create one relatively easily. There were a handful of components I needed to get this working:
 
-1. A set of API endpoints for ChatGPT to call
-2. An [OpenAPI / Swagger spec describing your API endpoints](https://appreviewsai.com/openapi.yml)
-3. A [manifest file telling ChatGPT what your plugin can do](https://www.appreviewsai.com/.well-known/ai-plugin.json)
+1. A set of API endpoints for ChatGPT to call. For my application I'd need two main ones:
+   - One to search for apps given a name
+   - And one to return reviews for a given app ID
+2. An [OpenAPI / Swagger spec describing the API endpoints](https://appreviewsai.com/openapi.yml)
+3. A [manifest file telling ChatGPT what the plugin can do](https://www.appreviewsai.com/.well-known/ai-plugin.json)
 
 I was able to build all of this into the same nextjs app without too much trouble. The main issue I ran into again was the context token limit of ~4k. I was able to get around this by samping reviews so it returns a maximum of 50 regardless of the timeframe requested. This was just a random number I picked that seemed to always work, but this can likely be tuned more preceisely.
 
@@ -78,11 +80,11 @@ I set up my ChatGPT account to use this plugin and I was pleasantly surprised by
 
 Below are some screenshots:
 
+![Rakuten week over week](rakuten-week-over-week.png)
+
 ![Screenshot](./uber-eats-vs-doordash.png)
 
 ![Rakuten](./rakuten.png)
-
-![Rakuten week over week](rakuten-week-over-week.png)
 
 ## Conclusion
 
