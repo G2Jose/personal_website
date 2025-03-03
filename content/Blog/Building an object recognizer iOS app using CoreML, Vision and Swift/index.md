@@ -6,8 +6,8 @@ date: "2017-06-15"
 
 > Publish date: `= this.file.frontmatter.date`
 
-|                                                                 |                                                             |                                                               |
-| :-------------------------------------------------------------: | :---------------------------------------------------------: | :-----------------------------------------------------------: |
+|                                                               |                                                           |                                                             |
+| :-----------------------------------------------------------: | :-------------------------------------------------------: | :---------------------------------------------------------: |
 | ![correctly recognizes an image of a starfish](starfish.webp) | ![correctly recognizes an image of bananas](bananas.webp) | ![correctly recognizes an image of a macbook](macbook.webp) |
 
 The CoreML and Vision frameworks were amongst some of the coolest new tech announced at WWDC on Wednesday (7 Jun).
