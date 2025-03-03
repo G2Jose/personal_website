@@ -5,8 +5,6 @@ date: "2024-09-20"
 
 #blog/post #projects/titan #typescript #react #react-native 
 
-> Publish date: `= this.file.frontmatter.date`
-
 Picking the right tool for the job is absolutely crucial, especially when you have limited time to spend on it. Picking the wrong stack could lead to tons of wasted effort, something I couldn't afford on Titan as a one-person project.
 
 There are a few main pieces to the stack behind something like Titan. Broadly speaking they are: 

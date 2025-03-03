@@ -4,8 +4,6 @@ date: "2020-06-01"
 ---
 #blog/post #react #react-native
 
-> Publish date: `= this.file.frontmatter.date`
-
 Over the past few weeks, the engineering team at Drop has been doing some really great work on improving app performance. There are several areas that ultimately impact what users perceive as 'app performance' that are being worked on. One such area is app rendering - i.e given that data from the API has been fetched, or given that the user has performed an action, how long it takes the app to render (or update) a view.
 
 ## Intro to React Native

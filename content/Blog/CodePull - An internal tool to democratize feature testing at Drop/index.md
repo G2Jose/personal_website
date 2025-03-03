@@ -4,8 +4,6 @@ title: CodePull - An internal tool to democratize feature testing at Drop
 ---
 #blog/post #react-native #typescript #developer-experience
 
-> Publish date: `= this.file.frontmatter.date`
-
 >[!note]
 > This is a shorter version of a more detailed post I made internally at Drop. Some details have been omitted here to preserve confidentiality. 
 > After its initial adoption in June 2021, CodePull became a core part of the development and testing workflow at Drop. 

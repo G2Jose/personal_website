@@ -4,8 +4,6 @@ date: "2021-05-18T22:12:03.284Z"
 ---
 #blog/post #ruby #ruby-on-rails #typescript #static-analysis
 
-> Publish date: `= this.file.frontmatter.date`
-
 [Static code analysis](https://en.wikipedia.org/wiki/Static_program_analysis) is the concept of examining source code and predicting how it will behave without actually running it. Often it's used by automated tooling as part of the development process to prevent problematic code from making it into a mainline branch. It is designed to complement other processes like manual testing, automated tests and pull request reviews.
 
 Static code analysis is something we use quite heavily at Drop, particularly on the frontend, but also on the backend. Broadly speaking, the static analysis tools we use fall under two categories:

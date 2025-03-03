@@ -4,8 +4,6 @@ date: "2017-02-27"
 ---
 #blog/post
 
-> Publish date: `= this.file.frontmatter.date`
-
 >[!note]
 >This is a very old post from 2017. My personal website now just uses github pages for hosting with a custom domain, and handles things like caching, TLS etc.
 

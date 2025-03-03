@@ -4,8 +4,6 @@ date: 2025-02-20
 ---
 #blog/post   
 
-> Publish date: `= this.file.frontmatter.date`
-
 Throughout the years I've tried various setups for publishing blog posts and notes online. I've tried custom react sites (using handwritten react apps in the dark days before [`create-react-app`](https://github.com/facebook/create-react-app) , which itself is now long deprecated) to frameworks like [Nextjs](https://nextjs.org/) and [Gatsby](https://www.gatsbyjs.com/). I felt like it never quite hit the spot for me. I found myself spending way more time tweaking the setup than on the actual writing.
 
 Today my setup is much simpler. I write all my notes in [Obsidian](https://obsidian.md/). Anything I want to publish online, I do so using a couple of clicks and [Nathan George's](https://nathang.dev/) excellent [Webpage HTML Export](https://github.com/KosmosisDire/obsidian-webpage-export) plugin. 

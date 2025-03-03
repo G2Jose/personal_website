@@ -4,8 +4,6 @@ date: "2017-07-09T22:12:03.284Z"
 ---
 #blog/post
 
-> Publish date: `= this.file.frontmatter.date`
-
 In this blog post I’ll talk about how I built a visualization of Toronto Transit vehicle locations and some of the engineering challenges I ran into. A working demo can be found [on my personal website](https://georgejose.com/projects/livetransit/) (I’ve noticed some corporate networks blocking port 3000 and this application requires it), and all code can be found on [github](https://github.com/G2Jose/wheres-my-ttc).
 
 ![screenshot](img-1.webp)
