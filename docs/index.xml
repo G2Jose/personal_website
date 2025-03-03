@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>George Jose</title>
+      <link>https://https://georgejose.com</link>
+      <description>Last 10 notes on George Jose</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Resume</title>
+    <link>https://https://georgejose.com/Resume</link>
+    <guid>https://https://georgejose.com/Resume</guid>
+    <description>Summary Product-minded engineering generalist with years of experience in various capacities – technical leadership, people, process &amp; project management, hands-on software ...</description>
+    <pubDate>Mon, 03 Mar 2025 23:03:33 GMT</pubDate>
+  </item><item>
+    <title>Hi I&#039;m George</title>
+    <link>https://https://georgejose.com/</link>
+    <guid>https://https://georgejose.com/</guid>
+    <description> Blog Resume Contact .</description>
+    <pubDate>Mon, 03 Mar 2025 23:03:33 GMT</pubDate>
+  </item><item>
+    <title>index</title>
+    <link>https://https://georgejose.com/blog/My-Obsidian-setup-in-2025/attachments/</link>
+    <guid>https://https://georgejose.com/blog/My-Obsidian-setup-in-2025/attachments/</guid>
+    <description></description>
+    <pubDate>Fri, 21 Feb 2025 13:59:01 GMT</pubDate>
+  </item><item>
+    <title>My Obsidian setup in 2025</title>
+    <link>https://https://georgejose.com/blog/My-Obsidian-setup-in-2025/</link>
+    <guid>https://https://georgejose.com/blog/My-Obsidian-setup-in-2025/</guid>
+    <description>post Publish date: = this.file.frontmatter.date Philosophy My overarching goals with writing notes are 2 fold: To help me think clearly To serve as a personal knowledge base I can ...</description>
+    <pubDate>Fri, 21 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>My publishing setup in 2025</title>
+    <link>https://https://georgejose.com/blog/My-publishing-setup-in-2025/</link>
+    <guid>https://https://georgejose.com/blog/My-publishing-setup-in-2025/</guid>
+    <description>post Publish date: = this.file.frontmatter.date Throughout the years I’ve tried various setups for publishing blog posts and notes online. I’ve tried custom react sites (using handwritten react apps in the dark days before create-react-app , which itself is now long deprecated) to frameworks like Nextjs and Gatsby.</description>
+    <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>index</title>
+    <link>https://https://georgejose.com/blog/Introducing-Titan-Workout-Tracker/attachments/</link>
+    <guid>https://https://georgejose.com/blog/Introducing-Titan-Workout-Tracker/attachments/</guid>
+    <description></description>
+    <pubDate>Tue, 18 Feb 2025 21:33:39 GMT</pubDate>
+  </item><item>
+    <title>Contact</title>
+    <link>https://https://georgejose.com/Contact</link>
+    <guid>https://https://georgejose.com/Contact</guid>
+    <description> Website Email BlueSky X Linkedin .</description>
+    <pubDate>Tue, 18 Feb 2025 20:43:32 GMT</pubDate>
+  </item><item>
+    <title>index</title>
+    <link>https://https://georgejose.com/blog/Writing-better-code-using-static-analysis/attachments/</link>
+    <guid>https://https://georgejose.com/blog/Writing-better-code-using-static-analysis/attachments/</guid>
+    <description></description>
+    <pubDate>Tue, 18 Feb 2025 20:03:07 GMT</pubDate>
+  </item><item>
+    <title>index</title>
+    <link>https://https://georgejose.com/blog/Visualizing-transit-vehicle-locations-on-a-map-in-real-time-using-React/attachments/</link>
+    <guid>https://https://georgejose.com/blog/Visualizing-transit-vehicle-locations-on-a-map-in-real-time-using-React/attachments/</guid>
+    <description></description>
+    <pubDate>Tue, 18 Feb 2025 20:02:51 GMT</pubDate>
+  </item><item>
+    <title>index</title>
+    <link>https://https://georgejose.com/blog/Optimizing-rendering-performance-in-react-native/attachments/</link>
+    <guid>https://https://georgejose.com/blog/Optimizing-rendering-performance-in-react-native/attachments/</guid>
+    <description></description>
+    <pubDate>Tue, 18 Feb 2025 20:02:36 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>

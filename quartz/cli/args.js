@@ -63,7 +63,7 @@ export const BuildArgv = {
   output: {
     string: true,
     alias: ["o"],
-    default: "public",
+    default: "docs",
     describe: "output folder for files",
   },
   serve: {
