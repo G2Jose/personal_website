@@ -4,8 +4,6 @@ date: 2025-02-21
 ---
 
 #blog/post 
-
-> Publish date: `= this.file.frontmatter.date`
 # Philosophy
 My overarching goals with writing notes are 2 fold: 
 - To help me think clearly

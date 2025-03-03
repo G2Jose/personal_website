@@ -4,8 +4,6 @@ date: "2022-06-22"
 ---
 #blog/post #ruby #ruby-on-rails #static-analysis
 
-> Publish date: `= this.file.frontmatter.date`
-
 > [!note] 
 > This is a shorter version of a more detailed post I made internally at Drop while researching this topic. Certain details have been removed here to protect confidentiality. 
 > Based on this initial evaluation, Sorbet was adopted into the backend codebase initially on a trial run and more extensively afterwards.

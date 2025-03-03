@@ -4,8 +4,6 @@ date: "2023-04-30"
 ---
 #blog/post
 
-> Publish date: `= this.file.frontmatter.date`
-
 ![screenshot](skip-uber-comparison.png)
 
 ## Context

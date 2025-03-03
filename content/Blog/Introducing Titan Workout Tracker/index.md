@@ -4,8 +4,6 @@ date: "2023-06-13"
 ---
 #blog/post #projects/titan
 
-> Publish date: `= this.file.frontmatter.date`
-
 👋 Hi I'm George and I'm the maker of Titan Workout Tracker, a simple to use yet fully featured workout tracker for strength training and body weight based exercises.
 
 There are a few different reasons I wanted to build this app: 

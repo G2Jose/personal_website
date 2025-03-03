@@ -4,8 +4,6 @@ date: "2017-06-15"
 ---
 #blog/post
 
-> Publish date: `= this.file.frontmatter.date`
-
 |                                                               |                                                           |                                                             |
 | :-----------------------------------------------------------: | :-------------------------------------------------------: | :---------------------------------------------------------: |
 | ![correctly recognizes an image of a starfish](starfish.webp) | ![correctly recognizes an image of bananas](bananas.webp) | ![correctly recognizes an image of a macbook](macbook.webp) |
