@@ -8,11 +8,22 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
+      GitHub: "https://github.com/g2jose",
+      X: "https://x.com/george__jose",
+      LinkedIn: "https://www.linkedin.com/in/g2jose/",
     },
   }),
 }
+
+const Explorer = Component.Explorer({
+  folderClickBehavior: "link",
+  filterFn: (node) => {
+    return node.displayName !== "attachments"
+  },
+
+  useSavedState: true,
+  folderDefaultState: "collapsed",
+})
 
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
@@ -37,9 +48,9 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Explorer(),
   ],
   right: [
-    Component.Graph(),
+    // Component.Graph(),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
+    // Component.Backlinks(),
   ],
 }
 

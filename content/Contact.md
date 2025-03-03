@@ -1,0 +1,5 @@
+- [Website](https://georgejose.com)
+- [Email](mailto:bigness_kudos00@icloud.com?body=%0D%0Asource%3A%20George's%20Blog)
+- [BlueSky](https://bsky.app/profile/georgejose.bsky.social)
+- [X](https://x.com/george__jose)
+- [Linkedin](https://www.linkedin.com/in/g2jose/)
