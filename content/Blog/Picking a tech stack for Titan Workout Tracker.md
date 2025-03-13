@@ -1,6 +1,7 @@
 ---
 title: Picking a tech stack for Titan Workout Tracker
 date: "2024-09-20"
+description: The decisions behind the tech stack used in Titan Workout Tracker
 ---
 
 #blog/post #projects/titan #typescript #react #react-native 
