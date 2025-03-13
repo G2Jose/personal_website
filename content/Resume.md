@@ -1,3 +1,7 @@
+---
+comments: false
+---
+
 # Summary
 - Product-minded engineering generalist with years of experience in various capacities – technical leadership, people, process & project management, hands-on software development
 - Extensive experience leading teams and executing complex, open-ended projects in startup and corporate environments
