@@ -17,15 +17,14 @@ I saw an opportunity here to build a beautifully crafted app to motivate my frie
 
 After about 2 weeks of writing code on evenings, nights and weekends after work and lots of coffee, v1.0.0 of the app is out on the App Store.
 
-![[Pasted image 20250218163412.png]]
+![attachments/titan-v1.png](./attachments/titan-v1.png)
 
 Here are some early screenshots of what I've built:
 
-|                                           |                                           |                                           |
-| ----------------------------------------- | ----------------------------------------- | ----------------------------------------- |
-| ![[Pasted image 20250218163452.png\|200]] | ![[Pasted image 20250218163649.png\|200]] | ![[Pasted image 20250218163704.png\|200]] |
-|                                           |                                           |                                           |
-| ![[Pasted image 20250218163723.png\|200]] | ![[Pasted image 20250218163732.png\|200]] |                                           |
+|                                                                                |                                                                                                                |                                                                        |
+| ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| ![attachments/titan-v1-home.png\|200](./attachments/titan-v1-home.png)         | ![attachments/titan-v1-session.png\|200](./attachments/titan-v1-session.png)                                   | ![attachments/titan-v1-feed.png\|200](./attachments/titan-v1-feed.png) |
+| ![attachments/titan-v1-heatmaps.png\|200](./attachments/titan-v1-heatmaps.png) | ![attachments/titan-v1-workout-session-complete.png\|200](./attachments/titan-v1-workout-session-complete.png) |                                                                        |
 
 This is just the beginning, and I plan to document my experience building this product on this blog. 
 
