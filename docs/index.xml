@@ -6,6 +6,18 @@
       <description>Last 10 notes on George Jose</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>attachments</title>
+    <link>https://georgejose.com/Blog/attachments/attachments</link>
+    <guid>https://georgejose.com/Blog/attachments/attachments</guid>
+    <description></description>
+    <pubDate>Wed, 12 Mar 2025 23:15:13 GMT</pubDate>
+  </item><item>
+    <title>Hi I&#039;m George</title>
+    <link>https://georgejose.com/content</link>
+    <guid>https://georgejose.com/content</guid>
+    <description> Blog Resume Contact .</description>
+    <pubDate>Mon, 03 Mar 2025 23:14:36 GMT</pubDate>
+  </item><item>
     <title>Hi I&#039;m George</title>
     <link>https://georgejose.com/</link>
     <guid>https://georgejose.com/</guid>
@@ -18,29 +30,17 @@
     <description>Summary Product-minded engineering generalist with years of experience in various capacities – technical leadership, people, process &amp; project management, hands-on software ...</description>
     <pubDate>Mon, 03 Mar 2025 23:03:33 GMT</pubDate>
   </item><item>
-    <title>index</title>
-    <link>https://georgejose.com/Blog/My-Obsidian-setup-in-2025/attachments/</link>
-    <guid>https://georgejose.com/Blog/My-Obsidian-setup-in-2025/attachments/</guid>
-    <description></description>
-    <pubDate>Fri, 21 Feb 2025 13:59:01 GMT</pubDate>
-  </item><item>
     <title>My Obsidian setup in 2025</title>
-    <link>https://georgejose.com/Blog/My-Obsidian-setup-in-2025/</link>
-    <guid>https://georgejose.com/Blog/My-Obsidian-setup-in-2025/</guid>
+    <link>https://georgejose.com/Blog/My-Obsidian-setup-in-2025</link>
+    <guid>https://georgejose.com/Blog/My-Obsidian-setup-in-2025</guid>
     <description>post Philosophy My overarching goals with writing notes are 2 fold: To help me think clearly To serve as a personal knowledge base I can reference later One of the great things about ...</description>
     <pubDate>Fri, 21 Feb 2025 00:00:00 GMT</pubDate>
   </item><item>
     <title>My publishing setup in 2025</title>
-    <link>https://georgejose.com/Blog/My-publishing-setup-in-2025/</link>
-    <guid>https://georgejose.com/Blog/My-publishing-setup-in-2025/</guid>
+    <link>https://georgejose.com/Blog/My-publishing-setup-in-2025</link>
+    <guid>https://georgejose.com/Blog/My-publishing-setup-in-2025</guid>
     <description>post Throughout the years I’ve tried various setups for publishing blog posts and notes online. I’ve tried custom react sites (using handwritten react apps in the dark days before create-react-app , which itself is now long deprecated) to frameworks like Nextjs and Gatsby.</description>
     <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>index</title>
-    <link>https://georgejose.com/Blog/Introducing-Titan-Workout-Tracker/attachments/</link>
-    <guid>https://georgejose.com/Blog/Introducing-Titan-Workout-Tracker/attachments/</guid>
-    <description></description>
-    <pubDate>Tue, 18 Feb 2025 21:33:39 GMT</pubDate>
   </item><item>
     <title>Contact</title>
     <link>https://georgejose.com/Contact</link>
@@ -48,23 +48,23 @@
     <description> Website Email BlueSky X Linkedin .</description>
     <pubDate>Tue, 18 Feb 2025 20:43:32 GMT</pubDate>
   </item><item>
-    <title>index</title>
-    <link>https://georgejose.com/Blog/Writing-better-code-using-static-analysis/attachments/</link>
-    <guid>https://georgejose.com/Blog/Writing-better-code-using-static-analysis/attachments/</guid>
-    <description></description>
-    <pubDate>Tue, 18 Feb 2025 20:03:07 GMT</pubDate>
+    <title>Picking a tech stack for Titan Workout Tracker</title>
+    <link>https://georgejose.com/Blog/Picking-a-tech-stack-for-Titan-Workout-Tracker</link>
+    <guid>https://georgejose.com/Blog/Picking-a-tech-stack-for-Titan-Workout-Tracker</guid>
+    <description>post titan typescript react react-native Picking the right tool for the job is absolutely crucial, especially when you have limited time to spend on it ...</description>
+    <pubDate>Fri, 20 Sep 2024 00:00:00 GMT</pubDate>
   </item><item>
-    <title>index</title>
-    <link>https://georgejose.com/Blog/Visualizing-transit-vehicle-locations-on-a-map-in-real-time-using-React/attachments/</link>
-    <guid>https://georgejose.com/Blog/Visualizing-transit-vehicle-locations-on-a-map-in-real-time-using-React/attachments/</guid>
-    <description></description>
-    <pubDate>Tue, 18 Feb 2025 20:02:51 GMT</pubDate>
+    <title>The Philosophy behind Titan Workout Tracker</title>
+    <link>https://georgejose.com/Blog/The-Philosophy-behind-Titan-Workout-Tracker</link>
+    <guid>https://georgejose.com/Blog/The-Philosophy-behind-Titan-Workout-Tracker</guid>
+    <description>post titan A little while ago I wrote briefly about why I built Titan. In this post I’d like to dive a little deeper into the philosophy that’s shaped the app’s development.</description>
+    <pubDate>Thu, 20 Jul 2023 00:00:00 GMT</pubDate>
   </item><item>
-    <title>index</title>
-    <link>https://georgejose.com/Blog/Optimizing-rendering-performance-in-react-native/attachments/</link>
-    <guid>https://georgejose.com/Blog/Optimizing-rendering-performance-in-react-native/attachments/</guid>
-    <description></description>
-    <pubDate>Tue, 18 Feb 2025 20:02:36 GMT</pubDate>
+    <title>Introducing Titan Workout Tracker</title>
+    <link>https://georgejose.com/Blog/Introducing-Titan-Workout-Tracker</link>
+    <guid>https://georgejose.com/Blog/Introducing-Titan-Workout-Tracker</guid>
+    <description>post titan 👋 Hi I’m George and I’m the maker of Titan Workout Tracker, a simple to use yet fully featured workout tracker for strength training and body weight based exercises ...</description>
+    <pubDate>Tue, 13 Jun 2023 00:00:00 GMT</pubDate>
   </item>
     </channel>
   </rss>
