@@ -52,6 +52,7 @@ An incredibly powerful plugin to query all your markdown notes like a database.
 Makes it possible to have nested notes like on Notion. 
 ## [Iconize](https://github.com/FlorianWoelki/obsidian-iconize)
 Lets you add icons to a lot of places. I just use it for top level directories. 
+
 ![CleanShot 2025-02-21 at 09.13.59@2x](attachments/CleanShot%202025-02-21%20at%2009.13.59@2x.png)
 ## [Janitor](https://github.com/Canna71/obsidian-janitor)
 Lets you find and remove empty files anywhere in your vault

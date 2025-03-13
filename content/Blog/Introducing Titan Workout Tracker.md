@@ -8,7 +8,7 @@ date: "2023-06-13"
 
 There are a few different reasons I wanted to build this app: 
 
-* I found existing workout trackers (I've used Strong, Hevy and a few others) to be rather bland (I know, it's subjective), or lacking in key features. Many of them locked out essential features unless I signed up for an expensive monthly subscription. Strong for example only allows you to have 3 workout plans, and a couple of charts to track your progress on the free version. 
+* [ ] I found existing workout trackers (I've used Strong, Hevy and a few others) to be rather bland (I know, it's subjective), or lacking in key features. Many of them locked out essential features unless I signed up for an expensive monthly subscription. Strong for example only allows you to have 3 workout plans, and a couple of charts to track your progress on the free version. 
 * I've recently started getting back into working out, and so have a few of my friends. I couldn't find a nicely built, reasonably priced app that allowed us to follow each other's progress.
 * There have been a lot of development in AI, including tools that should making it easier to build things. I wanted to see exactly how I could use some of these, and if they live up to the hype.
 * I often start many personal projects, but rarely complete them. I wanted to challenge myself to actually see some of them through.
