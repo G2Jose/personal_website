@@ -24,7 +24,7 @@ end
 
 may look something like this:
 
-![AST of add function](image-1.png)
+![AST of add function](./attachments/image-1.png)
 
 This can also be expressed as an [S-expression](https://en.wikipedia.org/wiki/S-expression#Examples_of_data_S-expressions):
 
@@ -159,7 +159,7 @@ end
 ```
 
 This now flags any problematic code right within one's editor & as part of Continuous Integration checks.
-![Editor flagging incorrect code](editor-flagging.png)
+![Editor flagging incorrect code](./attachments/editor-flagging.png)
 
 ### Typescript
 
@@ -203,7 +203,7 @@ const offer: ReturnType<typeof getOffer> = yield select(
 ) // This is now flagged
 ```
 
-![Editor flagging yield expression](editor-flagging-yield.png)
+![Editor flagging yield expression](./attachments/editor-flagging-yield.png)
 
 It turns out we can very easily encode a rule to ensure that all `yield` expressions have explicit typings. We start by inspecting the AST for some correct and incorrect code examples. https://astexplorer.net/ is a great tool for this (make sure you select the same parser we use in our system - `@typescript-eslint/parser`).
 

@@ -40,10 +40,10 @@ I also back up / version control my vault using git.
 # Plugins
 ## [Apple Books - Import Highlights](https://github.com/bandantonio/obsidian-apple-books-highlights-plugin)
 I do a lot of my reading on my iPad and iPhone. This plugin imports all highlights from all books I have (whether bought from apple or an .epub files opened using the Books app) into markdown notes. Clicking on a highlight even takes you to the specific spot in the book.
-![[CleanShot 2025-02-21 at 08.58.36@2x 1.png]]
+![CleanShot 2025-02-21 at 08.58.36@2x 1](attachments/CleanShot%202025-02-21%20at%2008.58.36@2x%201.png)
 ## [Book Search](https://github.com/anpigon/obsidian-book-search-plugin)
 This one lets you make book notes with whatever metadata you specify (eg: title, author, cover image etc). Using the dataview plugin you can query and visualize these notes in whatever way you like, even similar to a completely offline version of GoodReads. 
-![[CleanShot 2025-02-21 at 09.04.27@2x.png]]
+![CleanShot 2025-02-21 at 09.04.27@2x](attachments/CleanShot%202025-02-21%20at%2009.04.27@2x.png)
 ## [Calendar](https://github.com/liamcain/obsidian-calendar-plugin)
 Shows a calendar view on the sidebar. I can click into a date to quickly start a daily note. 
 ## [Dataview](https://blacksmithgu.github.io/obsidian-dataview/)
@@ -52,7 +52,7 @@ An incredibly powerful plugin to query all your markdown notes like a database.
 Makes it possible to have nested notes like on Notion. 
 ## [Iconize](https://github.com/FlorianWoelki/obsidian-iconize)
 Lets you add icons to a lot of places. I just use it for top level directories. 
-![[CleanShot 2025-02-21 at 09.13.59@2x.png]]
+![CleanShot 2025-02-21 at 09.13.59@2x](attachments/CleanShot%202025-02-21%20at%2009.13.59@2x.png)
 ## [Janitor](https://github.com/Canna71/obsidian-janitor)
 Lets you find and remove empty files anywhere in your vault
 ## [Lazy Plugin Loader](https://github.com/alangrainger/obsidian-lazy-plugins)
@@ -69,12 +69,12 @@ Makes it possible to copy a URL from anywhere, highlight some text in obsidian a
 Easily create notes for a day, week, month etc. Similar to the [Daily Note core plugin](https://help.obsidian.md/Plugins/Daily+notes) . Integrates nicely with [the calendar plugin](https://github.com/liamcain/obsidian-calendar-plugin), and lets you click on a date or week to quickly make a periodic note. 
 ## [Recent Files](https://github.com/tgrosinger/recent-files-obsidian)
 Shows a neat list of files I've opened recently on my sidebar.
-![[CleanShot 2025-02-21 at 09.24.41@2x.png]]
+![CleanShot 2025-02-21 at 09.24.41@2x](attachments/CleanShot%202025-02-21%20at%2009.24.41@2x.png)
 ## [Settings Search](https://github.com/javalent/settings-search)
 Makes it possible to search for any setting. This really should've been a core built in feature. 
 ## [Waypoint](https://github.com/IdreesInc/Waypoint)
 Let's you create an automatically updating index page that lists all files in the current directory and nested subdirectories. Works well with the [Folder Notes](https://github.com/LostPaul/obsidian-folder-notes) plugin. 
-![[CleanShot 2025-02-21 at 09.30.04@2x.png]]
+![CleanShot 2025-02-21 at 09.30.04@2x](attachments/CleanShot%202025-02-21%20at%2009.30.04@2x.png)
 ## [Webpage HTML Export]()
-What I use to publish this website. More details here - [[2. Areas/Blog/posts/My publishing setup in 2025/index]].
+What I use to publish this website. More details here - [2. Areas/Blog/posts/My publishing setup in 2025/index](2.%20Areas/Blog/posts/My%20publishing%20setup%20in%202025/index).
 

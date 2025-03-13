@@ -6,7 +6,7 @@ date: "2017-07-09T22:12:03.284Z"
 
 In this blog post I’ll talk about how I built a visualization of Toronto Transit vehicle locations and some of the engineering challenges I ran into. A working demo can be found [on my personal website](https://georgejose.com/projects/livetransit/) (I’ve noticed some corporate networks blocking port 3000 and this application requires it), and all code can be found on [github](https://github.com/G2Jose/wheres-my-ttc).
 
-![screenshot](img-1.webp)
+![screenshot](./attachments/img-1.webp)
 
 ## Picking Technologies
 
@@ -227,13 +227,13 @@ The component update was taking 359ms to update after each API request. I soon n
 
 Adding a condition to only update markers that are within the current window boundaries and re-running the chrome profiler showed me the following:
 
-![Performance optimization 1](performance-optimization-1.webp)
+![Performance optimization 1](./attachments/performance-optimization-1.webp)
 
 47.27ms instead of 359.84ms for the same zoom level, **an improvement of ~750%**!
 
 2. I also noticed that **network requests take rather long**.
 
-![API performance before optimization](api-performance-1.webp)
+![API performance before optimization](./attachments/api-performance-1.webp)
 
 Let’s see if the restbus API returns any data we do not need.
 
@@ -282,7 +282,7 @@ Let’s see if the restbus API returns any data we do not need.
 
 We’re only using a few fields out of this — `id`, `routeId`, `secsSinceLastReport`, `lat`, `lon`, and everything else can be ignored. Filtering this on the backend using an express middleware before sending a json response gives us:
 
-![API performance after optimizing](api-performance-2.webp)
+![API performance after optimizing](./attachments/api-performance-2.webp)
 
 Response times are **on average a lot lower**!
 
