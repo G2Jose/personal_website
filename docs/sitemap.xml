@@ -1,72 +1,54 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
-    <loc>https://georgejose.com/Blog/Building-an-object-recognizer-iOS-app-using-CoreML,-Vision-and-Swift/attachments/</loc>
-    <lastmod>2025-02-18T20:01:57.000Z</lastmod>
-  </url><url>
-    <loc>https://georgejose.com/Blog/Building-an-object-recognizer-iOS-app-using-CoreML,-Vision-and-Swift/</loc>
+    <loc>https://georgejose.com/Blog/Building-an-object-recognizer-iOS-app-using-CoreML,-Vision-and-Swift</loc>
     <lastmod>2017-06-15T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://georgejose.com/Blog/CodePull---An-internal-tool-to-democratize-feature-testing-at-Drop/</loc>
+    <loc>https://georgejose.com/Blog/CodePull---An-internal-tool-to-democratize-feature-testing-at-Drop</loc>
     <lastmod>2021-05-25T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://georgejose.com/Blog/Exploring-Sorbet-with-Rails-at-Drop/</loc>
+    <loc>https://georgejose.com/Blog/Exploring-Sorbet-with-Rails-at-Drop</loc>
     <lastmod>2022-06-22T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://georgejose.com/Blog/Exploring-User-Sentiment-On-Apps-Using-AI/attachments/</loc>
-    <lastmod>2025-02-18T20:02:13.000Z</lastmod>
-  </url><url>
-    <loc>https://georgejose.com/Blog/Exploring-User-Sentiment-On-Apps-Using-AI/</loc>
+    <loc>https://georgejose.com/Blog/Exploring-User-Sentiment-On-Apps-Using-AI</loc>
     <lastmod>2023-04-30T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://georgejose.com/Blog/Introducing-Titan-Workout-Tracker/attachments/</loc>
-    <lastmod>2025-02-18T21:33:39.000Z</lastmod>
-  </url><url>
-    <loc>https://georgejose.com/Blog/Introducing-Titan-Workout-Tracker/</loc>
+    <loc>https://georgejose.com/Blog/Introducing-Titan-Workout-Tracker</loc>
     <lastmod>2023-06-13T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://georgejose.com/Blog/Moving-my-HTTP-website-to-HTTPS-using-LetsEncrypt,-HAProxy-and-Docker/attachments/</loc>
-    <lastmod>2025-02-18T20:02:27.000Z</lastmod>
-  </url><url>
-    <loc>https://georgejose.com/Blog/Moving-my-HTTP-website-to-HTTPS-using-LetsEncrypt,-HAProxy-and-Docker/</loc>
+    <loc>https://georgejose.com/Blog/Moving-my-HTTP-website-to-HTTPS-using-LetsEncrypt,-HAProxy-and-Docker</loc>
     <lastmod>2017-02-27T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://georgejose.com/Blog/My-Obsidian-setup-in-2025/attachments/</loc>
-    <lastmod>2025-02-21T13:59:01.000Z</lastmod>
-  </url><url>
-    <loc>https://georgejose.com/Blog/My-Obsidian-setup-in-2025/</loc>
+    <loc>https://georgejose.com/Blog/My-Obsidian-setup-in-2025</loc>
     <lastmod>2025-02-21T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://georgejose.com/Blog/My-publishing-setup-in-2025/</loc>
+    <loc>https://georgejose.com/Blog/My-publishing-setup-in-2025</loc>
     <lastmod>2025-02-20T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://georgejose.com/Blog/Optimizing-rendering-performance-in-react-native/attachments/</loc>
-    <lastmod>2025-02-18T20:02:36.000Z</lastmod>
-  </url><url>
-    <loc>https://georgejose.com/Blog/Optimizing-rendering-performance-in-react-native/</loc>
+    <loc>https://georgejose.com/Blog/Optimizing-rendering-performance-in-react-native</loc>
     <lastmod>2020-06-01T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://georgejose.com/Blog/Picking-a-tech-stack-for-Titan-Workout-Tracker/</loc>
+    <loc>https://georgejose.com/Blog/Picking-a-tech-stack-for-Titan-Workout-Tracker</loc>
     <lastmod>2024-09-20T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://georgejose.com/Blog/The-Philosophy-behind-Titan-Workout-Tracker/</loc>
+    <loc>https://georgejose.com/Blog/The-Philosophy-behind-Titan-Workout-Tracker</loc>
     <lastmod>2023-07-20T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://georgejose.com/Blog/Visualizing-transit-vehicle-locations-on-a-map-in-real-time-using-React/attachments/</loc>
-    <lastmod>2025-02-18T20:02:51.000Z</lastmod>
-  </url><url>
-    <loc>https://georgejose.com/Blog/Visualizing-transit-vehicle-locations-on-a-map-in-real-time-using-React/</loc>
+    <loc>https://georgejose.com/Blog/Visualizing-transit-vehicle-locations-on-a-map-in-real-time-using-React</loc>
     <lastmod>2017-07-09T22:12:03.284Z</lastmod>
   </url><url>
-    <loc>https://georgejose.com/Blog/Writing-better-code-using-static-analysis/attachments/</loc>
-    <lastmod>2025-02-18T20:03:07.000Z</lastmod>
-  </url><url>
-    <loc>https://georgejose.com/Blog/Writing-better-code-using-static-analysis/</loc>
+    <loc>https://georgejose.com/Blog/Writing-better-code-using-static-analysis</loc>
     <lastmod>2021-05-18T22:12:03.284Z</lastmod>
+  </url><url>
+    <loc>https://georgejose.com/Blog/attachments/attachments</loc>
+    <lastmod>2025-03-12T23:15:13.000Z</lastmod>
   </url><url>
     <loc>https://georgejose.com/Contact</loc>
     <lastmod>2025-02-18T20:43:32.000Z</lastmod>
   </url><url>
     <loc>https://georgejose.com/Resume</loc>
     <lastmod>2025-03-03T23:03:33.000Z</lastmod>
+  </url><url>
+    <loc>https://georgejose.com/content</loc>
+    <lastmod>2025-03-03T23:14:36.000Z</lastmod>
   </url><url>
     <loc>https://georgejose.com/</loc>
     <lastmod>2025-03-03T23:14:36.000Z</lastmod>
