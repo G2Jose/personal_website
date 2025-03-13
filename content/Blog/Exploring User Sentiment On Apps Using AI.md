@@ -4,7 +4,7 @@ date: "2023-04-30"
 ---
 #blog/post
 
-![screenshot](skip-uber-comparison.png)
+![screenshot](./attachments/skip-uber-comparison.png)
 
 ## Context
 
@@ -79,11 +79,11 @@ I set up my ChatGPT account to use this plugin and I was pleasantly surprised by
 
 Below are some screenshots:
 
-![Rakuten week over week](rakuten-week-over-week.png)
+![Rakuten week over week](./attachments/rakuten-week-over-week.png)
 
-![Screenshot](uber-eats-vs-doordash.png)
+![Screenshot](./attachments/uber-eats-vs-doordash.png)
 
-![Rakuten](rakuten.png)
+![Rakuten](./attachments/rakuten.png)
 
 ## Conclusion
 

@@ -14,11 +14,14 @@
   "scripts": {
     "quartz": "./quartz/bootstrap-cli.mjs",
     "build": "npx quartz build",
-    "start": "npx quartz build --serve",
+    "start:server": "npx quartz build --serve",
+    "start": "concurrently --kill-others \"npm run sync:watch\" \"npm run start:server\"",
     "check": "tsc --noEmit && npx prettier . --check",
     "format": "npx prettier . --write",
     "test": "tsx ./quartz/util/path.test.ts && tsx ./quartz/depgraph.test.ts",
-    "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1"
+    "profile": "0x -D prof ./quartz/bootstrap-cli.mjs build --concurrency=1",
+    "sync:watch": "concurrently --kill-others scripts/sync-from-obsidian-continuous.sh",
+    "sync": "concurrently --kill-others scripts/sync-from-obsidian.sh"
   },
   "engines": {
     "npm": ">=9.3.1",
@@ -32,9 +35,7 @@
     "blog",
     "quartz"
   ],
-  "bin": {
-    "quartz": "./quartz/bootstrap-cli.mjs"
-  },
+  "bin": "./quartz/bootstrap-cli.mjs",
   "dependencies": {
     "@clack/prompts": "^0.10.0",
     "@floating-ui/dom": "^1.6.13",
@@ -108,9 +109,11 @@
     "@types/source-map-support": "^0.5.10",
     "@types/ws": "^8.5.14",
     "@types/yargs": "^17.0.33",
+    "concurrently": "^9.1.2",
     "esbuild": "^0.25.0",
     "prettier": "^3.5.2",
     "tsx": "^4.19.3",
     "typescript": "^5.7.3"
-  }
+  },
+  "packageManager": "yarn@4.7.0"
 }

@@ -74,15 +74,15 @@ The React Profiler is a development tool that lets you inspect the rendering lif
 
 Starting up the simulator, and recording a performance profile from app open all the way to when we're able to dismiss the launchpad, this is what the profiler shows:
 
-![img-1](img-1.png)
+![img-1](./attachments/img-1.png)
 
 This tells us there are 1330 'render cycles' happening. Render cycles are react's way of optimizing UI updates - if 20 components need to update within a small time interval, react batches all these up into a single update cycle as opposed to 20 different ones. 1330 cycles here are too many for a human to inspect one by one, and the large number in itself may not indicate issues. To make it easier to find issues, the tool allows us to filter for just render cycles that take more than a given amount of time. Filtering for cycles that take more than an arbitrary `> 150ms` shows us 4 potentially problematic render cycles.
 
-![img-2](img-2.png)
+![img-2](./attachments/img-2.png)
 
 The view above shows bars corresponding to the component tree, and where the color indicates rendering time (closer to blue = less time, closer to yellow = more time). Narrowing into the item marked in yellow here tells us a few things:
 
-![img-3](img-3.png)
+![img-3](./attachments/img-3.png)
 
 1. This component is part of the `OfferCategoryListCarousel` component, which corresponds to the unbundled categories view on the shop tab.
 2. The sidebar on the right tells us that this instance of the component has rendered 14 times during the profiling period, adding up to a total of ~1.5s (Note that the absolute value in development mode here may be different from the experience on a production build, which is a lot more optimized. This is however, directionally informative). We know from the API requests we make that this component should just depend on 2 calls (/offers & /categories) and that a given category view shouldn't need to re-render that many times. We know also that the shop tab contains about 7 such category carousels using the same logic, so optimizing this could have a sizeable effect.
@@ -93,16 +93,16 @@ The Chrome performance profiler is yet another, more general purpose devtool tha
 
 In contrast to the react profiler that shows individual render cycles, the output of the Chrome profiler is continuous, time based flame graph (i.e render durations correspond to the size of the bars)
 
-![img-4](img-4.png)
+![img-4](./attachments/img-4.png)
 
 Hovering on segments in this view shows the amount of time spent on rendering / updating components. We can see for example in the screenshot above that it took 234ms to render the `OfferCategoryListCarousel` in its current render cycle.
 
 It is also possible to zoom into time intervals of interest to see a much more granular view of how much time is spent rendering sub-components. We can for example see here that there is a good chunk of time spent rendering `OfferListItem` (which correspond to each offer in the unbundled category view)
 
-![img-5](img-5.png)
+![img-5](./attachments/img-5.png)
 
 Another nice thing about this view is that you can search by component name to find all render / update cycles associated with it.
-![img-6](img-6.png)
+![img-6](./attachments/img-6.png)
 
 ### 3. Chrome User timing API
 
@@ -112,11 +112,11 @@ Start and stop times can be set by calling `window.performance.mark(startOrStopT
 
 Adding this profiling code code to the `getDiscoveryOffersByCategory` function (this is used to get offer give a category id) for example tells me that it's called 24 times on app open, and add up to a total of about 56ms.
 
-![img-7](img-7.png)
+![img-7](./attachments/img-7.png)
 
 It’s also possible to overlay this on a timeline view for easy comparison against time taken for rendering
 
-![img-8](img-8.png)
+![img-8](./attachments/img-8.png)
 
 Adding some profiling code to the `getOffer` function, I can see that it adds up to about 1.8s, even before any user interaction (note that this is just the time spent on running the selector, not including rendering time). This is a good indicator that this function should be optimized.
 
@@ -131,7 +131,7 @@ This function can for example be inserted into a component's `render` function t
 
 Plopping this into the `getOffer` selector function (this is a function that's used throughout the codebase to look up offers, given offer ids), we see something like:
 
-![img-9](img-9.png)
+![img-9](./attachments/img-9.png)
 
 I.e this function was called 203 different times to look up data for the offer with id `1267`. This is a **large** number of calls to the same function with (mostly) the same arguments, and indicates that this is a really good candidate for memoization.
 

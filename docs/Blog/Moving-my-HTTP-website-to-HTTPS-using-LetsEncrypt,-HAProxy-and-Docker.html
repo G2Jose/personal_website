@@ -11,10 +11,10 @@
 </div>
 </blockquote>
 <p>I’ve had a personal website hosted on an AWS EC2 instance with a domain purchased from Namecheap for a while now. My previous setup involved an express server serving a static directory, and running on port 80 on an AWS EC2 instance. I recently changed this up to instead use HTTPS and decided to write a post explaining how you can do so too!</p>
-<p><img src="./architecture.webp" alt="Architecture"/></p>
+<p><img src="./attachments/architecture.webp" alt="Architecture"/></p>
 <h2 id="what-is-https"><strong>What is HTTPS?</strong><a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#what-is-https" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
 <p>HTTPS builds upon the Hyper Text Transfer Protocol (HTTP) by adding encryption between the web-server and the user’s browser. Chrome, Safari and several other browsers show a lock icon (🔒) in the address bar when viewing a website served over HTTPS.</p>
-<p><img src="./https-addressbar.webp" alt="https addressbar"/></p>
+<p><img src="./attachments/https-addressbar.webp" alt="https addressbar"/></p>
 <p>There are several advantages to using HTTPS:</p>
 <ul>
 <li>Encryption between the browser and the server means a third party in the middle cannot see data being exchanged, ensuring privacy and security.</li>
@@ -29,7 +29,7 @@
 <li>
 <p><strong>Docker</strong><br/>
 Docker is a really cool piece of technology that enables you to create ‘containers’. Containers can contain applications along with anything else it needs to run — an OS, libraries, software dependencies, runtimes etc. Think of it as a very lightweight VM. Since all dependencies for an application are contained within the container, the application is guaranteed to run consistently on any host machine that can run Docker itself. You can read more about docker at their official website — <a href="https://www.docker.com/what-docker" class="external">https://www.docker.com/what-docker<svg aria-hidden="true" class="external-icon" style="max-width:0.8em;max-height:0.8em;" viewBox="0 0 512 512"><path d="M320 0H288V64h32 82.7L201.4 265.4 178.7 288 224 333.3l22.6-22.6L448 109.3V192v32h64V192 32 0H480 320zM32 32H0V64 480v32H32 456h32V480 352 320H424v32 96H64V96h96 32V32H160 32z"></path></svg></a>.
-<img src="./docker.webp" alt="docker"/></p>
+<img src="./attachments/docker.webp" alt="docker"/></p>
 </li>
 <li>
 <p><strong>HAProxy</strong></p>
@@ -38,7 +38,7 @@ Docker is a really cool piece of technology that enables you to create ‘contai
 <li>
 <p><strong>Let’s Encrypt</strong></p>
 <p>Let’s Encrypt is a free, open Certificate Authority (CA) that can issue SSL certificates. We’ll use this service to generate a free SSL certificate.
-<img src="./lets-encrypt.webp" alt="Let's Encrypt"/></p>
+<img src="./attachments/lets-encrypt.webp" alt="Let's Encrypt"/></p>
 </li>
 </ul>
 <h1 id="setup">Setup<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#setup" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
@@ -130,7 +130,7 @@ personal-website
 <figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="shell" data-theme="github-light github-dark"><code data-language="shell" data-theme="github-light github-dark" style="display:grid;"><span data-line><span style="--shiki-light:#6A737D;--shiki-dark:#6A737D;"># Replace domain.com with the domain you would like to get the certificate for</span></span>
 <span data-line><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0;">sudo</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> letsencrypt</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> certonly</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> --webroot</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -w</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> ssl/</span><span style="--shiki-light:#005CC5;--shiki-dark:#79B8FF;"> -d</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;"> domain.com</span></span></code></pre></figure>
 <p>At this point I’m asked to provide an email address and to agree to terms and conditions. If everything worked, you’ll be greeted with a message that provides the location of your certificate.</p>
-<p><img src="./lets-encrypt-success.webp" alt="Let's Encrypt Success message"/></p>
+<p><img src="./attachments/lets-encrypt-success.webp" alt="Let's Encrypt Success message"/></p>
 <p>👍 I now have an SSL certificate!</p>
 <h2 id="haproxy">HAProxy<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#haproxy" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
 <p>The final piece is to set up HAProxy. To keep things simple, I used the official haproxy docker image to do this.</p>

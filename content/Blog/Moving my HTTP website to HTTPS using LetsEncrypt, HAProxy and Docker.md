@@ -9,13 +9,13 @@ date: "2017-02-27"
 
 I've had a personal website hosted on an AWS EC2 instance with a domain purchased from Namecheap for a while now. My previous setup involved an express server serving a static directory, and running on port 80 on an AWS EC2 instance. I recently changed this up to instead use HTTPS and decided to write a post explaining how you can do so too!
 
-![Architecture](architecture.webp)
+![Architecture](./attachments/architecture.webp)
 
 ## **What is HTTPS?**
 
 HTTPS builds upon the Hyper Text Transfer Protocol (HTTP) by adding encryption between the web-server and the user's browser. Chrome, Safari and several other browsers show a lock icon (🔒) in the address bar when viewing a website served over HTTPS.
 
-![https addressbar](https-addressbar.webp)
+![https addressbar](./attachments/https-addressbar.webp)
 
 There are several advantages to using HTTPS:
 
@@ -32,7 +32,7 @@ To set this up, I made use of a few technologies:
 
 - **Docker**  
   Docker is a really cool piece of technology that enables you to create 'containers'. Containers can contain applications along with anything else it needs to run — an OS, libraries, software dependencies, runtimes etc. Think of it as a very lightweight VM. Since all dependencies for an application are contained within the container, the application is guaranteed to run consistently on any host machine that can run Docker itself. You can read more about docker at their official website — [https://www.docker.com/what-docker](https://www.docker.com/what-docker).
-  ![docker](docker.webp)
+  ![docker](./attachments/docker.webp)
 - **HAProxy**
 
   HAProxy, or High Availability Proxy is a really popular load balancer and reverse-proxy application. In our setup, we'll use this as a layer to proxy all requests received over HTTPS over to our web server serving static files. We'll also set it up to redirect all HTTP traffic to HTTPS.
@@ -40,7 +40,7 @@ To set this up, I made use of a few technologies:
 - **Let's Encrypt**
 
   Let's Encrypt is a free, open Certificate Authority (CA) that can issue SSL certificates. We'll use this service to generate a free SSL certificate.
-  ![Let's Encrypt](lets-encrypt.webp)
+  ![Let's Encrypt](./attachments/lets-encrypt.webp)
 
 # Setup
 
@@ -174,7 +174,7 @@ sudo letsencrypt certonly --webroot -w ssl/ -d domain.com
 
 At this point I'm asked to provide an email address and to agree to terms and conditions. If everything worked, you'll be greeted with a message that provides the location of your certificate.
 
-![Let's Encrypt Success message](lets-encrypt-success.webp)
+![Let's Encrypt Success message](./attachments/lets-encrypt-success.webp)
 
 👍 I now have an SSL certificate!
 
