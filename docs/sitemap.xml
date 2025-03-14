@@ -1,49 +1,49 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
-    <loc>https://www.georgejose.com/Blog/Building-an-object-recognizer-iOS-app-using-CoreML,-Vision-and-Swift</loc>
-    <lastmod>2017-06-15T00:00:00.000Z</lastmod>
-  </url><url>
-    <loc>https://www.georgejose.com/Blog/CodePull---An-internal-tool-to-democratize-feature-testing-at-Drop</loc>
-    <lastmod>2021-05-25T00:00:00.000Z</lastmod>
-  </url><url>
-    <loc>https://www.georgejose.com/Blog/Exploring-Sorbet-with-Rails-at-Drop</loc>
-    <lastmod>2022-06-22T00:00:00.000Z</lastmod>
-  </url><url>
-    <loc>https://www.georgejose.com/Blog/Exploring-User-Sentiment-On-Apps-Using-AI</loc>
-    <lastmod>2023-04-30T00:00:00.000Z</lastmod>
-  </url><url>
-    <loc>https://www.georgejose.com/Blog/Introducing-Titan-Workout-Tracker</loc>
-    <lastmod>2023-06-13T00:00:00.000Z</lastmod>
-  </url><url>
-    <loc>https://www.georgejose.com/Blog/Moving-my-HTTP-website-to-HTTPS-using-LetsEncrypt,-HAProxy-and-Docker</loc>
-    <lastmod>2017-02-27T00:00:00.000Z</lastmod>
-  </url><url>
-    <loc>https://www.georgejose.com/Blog/My-Obsidian-setup-in-2025</loc>
-    <lastmod>2025-02-21T00:00:00.000Z</lastmod>
-  </url><url>
-    <loc>https://www.georgejose.com/Blog/Optimizing-rendering-performance-in-react-native</loc>
-    <lastmod>2020-06-01T00:00:00.000Z</lastmod>
-  </url><url>
     <loc>https://www.georgejose.com/Blog/Picking-a-tech-stack-for-Titan-Workout-Tracker</loc>
     <lastmod>2024-09-20T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://www.georgejose.com/Blog/The-Philosophy-behind-Titan-Workout-Tracker</loc>
-    <lastmod>2023-07-20T00:00:00.000Z</lastmod>
+    <loc>https://www.georgejose.com/Blog/ai-app-user-sentiment</loc>
+    <lastmod>2023-04-30T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://www.georgejose.com/Blog/Visualizing-transit-vehicle-locations-on-a-map-in-real-time-using-React</loc>
-    <lastmod>2017-07-09T22:12:03.284Z</lastmod>
+    <loc>https://www.georgejose.com/Blog/building-codepull-react-native</loc>
+    <lastmod>2021-05-25T00:00:00.000Z</lastmod>
   </url><url>
-    <loc>https://www.georgejose.com/Blog/Writing-better-code-using-static-analysis</loc>
-    <lastmod>2021-05-18T22:12:03.284Z</lastmod>
+    <loc>https://www.georgejose.com/Blog/coreml-object-recognizer</loc>
+    <lastmod>2017-06-15T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://www.georgejose.com/Blog/exploring-sorbet-with-rails</loc>
+    <lastmod>2022-06-22T00:00:00.000Z</lastmod>
   </url><url>
     <loc>https://www.georgejose.com/Blog/</loc>
     <lastmod>2025-03-14T03:08:23.000Z</lastmod>
+  </url><url>
+    <loc>https://www.georgejose.com/Blog/introducing-titan-workout-tracker</loc>
+    <lastmod>2023-06-13T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://www.georgejose.com/Blog/moving-website-https</loc>
+    <lastmod>2017-02-27T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://www.georgejose.com/Blog/obsidian-setup-2025</loc>
+    <lastmod>2025-02-21T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://www.georgejose.com/Blog/react-native-performance-optimizations</loc>
+    <lastmod>2020-06-01T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://www.georgejose.com/Blog/static-analysis-for-better-code</loc>
+    <lastmod>2021-05-18T22:12:03.284Z</lastmod>
+  </url><url>
+    <loc>https://www.georgejose.com/Blog/titan-workout-tracker-philosophy</loc>
+    <lastmod>2023-07-20T00:00:00.000Z</lastmod>
+  </url><url>
+    <loc>https://www.georgejose.com/Blog/ttc-transit-visualization</loc>
+    <lastmod>2017-07-09T22:12:03.284Z</lastmod>
   </url><url>
     <loc>https://www.georgejose.com/Contact</loc>
     <lastmod>2025-02-18T20:43:32.000Z</lastmod>
   </url><url>
     <loc>https://www.georgejose.com/Resume</loc>
-    <lastmod>2025-03-14T03:31:09.000Z</lastmod>
+    <lastmod>2025-03-14T04:14:56.000Z</lastmod>
   </url><url>
     <loc>https://www.georgejose.com/</loc>
-    <lastmod>2025-03-14T03:11:44.189Z</lastmod>
+    <lastmod>2025-03-14T03:11:44.000Z</lastmod>
   </url></urlset>

@@ -20,10 +20,10 @@ comments: false
 - Worked closely with product managers, engineers, data scientists, designers and cross functional business teams on identifying, prioritizing and executing impactful projects
 - Provided technical leadership to the wider Drop engineering team, led several high impact, cross-team technical efforts
 - Notable projects
-	- App Performance optimizations: Led a project that resulted in drastic improvements to app responsiveness on the iOS & Android (react native) apps. See also [[Blog/Optimizing rendering performance in react native|Optimizing rendering performance in react native]]
+	- App Performance optimizations: Led a project that resulted in drastic improvements to app responsiveness on the iOS & Android (react native) apps. See also [[Blog/react-native-performance-optimizations|react-native-performance-optimizations]]
 	- CodePull: Built an internal system that allows anyone at Drop to load up app changes from a pull request on their device by simply clicking an automatically generated link
 	- Test tooling: Built an internal framework that enables engineers to easily write comprehensive app integration tests leveraging realistic mock data
-	- Static type checking in Ruby: Spearheaded the adoption of [Sorbet](https://sorbet.org/) on the backend codebase for improved developer experience, productivity and code quality. See also [[Blog/Exploring Sorbet with Rails at Drop|Exploring Sorbet with Rails at Drop]]
+	- Static type checking in Ruby: Spearheaded the adoption of [Sorbet](https://sorbet.org/) on the backend codebase for improved developer experience, productivity and code quality. See also [[Blog/exploring-sorbet-with-rails|exploring-sorbet-with-rails]]
 ### Engineering Lead
 #### Growth Team, '18 – '19
 - Led a full stack engineering team of 4 individuals focused on product goals including user acquisition, engagement and retention
@@ -31,7 +31,7 @@ comments: false
 - Notable projects
 	- Typescript: made the case for, got buy-in and spearheaded migration; built internal tooling to track its adoption and assist with incremental migration; defined best practices and internal constructs to effectively write typesafe code
 	- Continuous Deployment: built tooling to continuously deploy merged app code to a staging environment
-	- Static code analysis: built internal rules for eslint & rubocop; rules rely on AST analysis to flag certain types of problematic code. See also [[Blog/Writing better code using static analysis|Writing better code using static analysis]]
+	- Static code analysis: built internal rules for eslint & rubocop; rules rely on AST analysis to flag certain types of problematic code. See also [[Blog/static-analysis-for-better-code|static-analysis-for-better-code]]
 
 ### Software Engineer
 #### Drop Engineering Team, '18
@@ -55,7 +55,7 @@ comments: false
 # Personal Projects
 - [Titan Workout Tracker](https://www.titangymapp.com/)
 	- A beautifully crafted, cross platform app to track weightlifting exercises & fitness metrics, solo, or with friends
-	- Read more at [[Blog/Introducing Titan Workout Tracker|Introducing Titan Workout Tracker]]
+	- Read more at [[Blog/introducing-titan-workout-tracker|introducing-titan-workout-tracker]]
 - [A Journal A Day](https://ajournaladay.com/)
 	- A privacy focused, completely local, cross platform app for daily, secure, journal entries
 - [Communauto Watcher](https://www.communautowatcher.com/)
