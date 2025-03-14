@@ -197,9 +197,3 @@ bundle exec rake sorbet:update:all
 - 🏘 **Community**
 	- [Slack](https://sorbet-ruby.slack.com/)
 
-# Related posts
-```dataview
-LIST WITHOUT ID "[["+file.name+"]]" + " " + dateformat(date, "yyyy MMM dd")
-FROM #blog/post
-WHERE contains(file.tags, "static-analysis") AND file.name != this.file.name
-```

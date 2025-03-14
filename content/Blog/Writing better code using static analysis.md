@@ -307,9 +307,3 @@ TLDR: Enforcing internal coding conventions through custom static checks is gene
 - [Static code analysis](https://en.wikipedia.org/wiki/Static_program_analysis)
 - [AST explorer for many languages](https://astexplorer.net/)
 - [Rubocop: Custom Cops for Custom Needs](https://thoughtbot.com/blog/rubocop-custom-cops-for-custom-needs)
-# Related posts
-```dataview
-LIST WITHOUT ID "[["+file.name+"]]" + " " + dateformat(date, "yyyy MMM dd")
-FROM #blog/post
-WHERE contains(file.tags, "static-analysis") AND file.name != this.file.name
-```

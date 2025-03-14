@@ -4,7 +4,7 @@ date: 2023-07-20
 ---
 #blog/post #projects/titan
 
-A little while ago I wrote briefly about [why I built Titan](./introducing-titan). In this post I'd like to dive a little deeper into the philosophy that's shaped the app's development. My journey with fitness and technology has been intertwined for years, and Titan is the culmination of that experience — a tool designed to make workout tracking effortless, enjoyable, and truly user-centric.
+A little while ago I wrote briefly about [[Introducing Titan Workout Tracker | why I built Titan Workout Tracker]]. In this post I'd like to dive a little deeper into the philosophy that's shaped the app's development. My journey with fitness and technology has been intertwined for years, and Titan is the culmination of that experience — a tool designed to make workout tracking effortless, enjoyable, and truly user-centric. 
 ## My Personal Fitness Journey
 I first started lifting weights many years ago while I was in university. Like many students I was juggling academics and a social life and hitting the gym was a way to relieve stress and stay healthy. However, maintaining consistency was a challenge. Since then, I’ve lifted on and off, often with very long periods (1-2+ years) where I’d simply lose interest and stop exercising. My friends often joke about how I’ve been paying for a gym membership since 2011, and how absurd my average cost per workout session probably is.
 
@@ -48,9 +48,3 @@ It’s about respecting the user’s right to their information and acknowledgin
 ## Thanks for reading
 Building Titan has been a labor of love. I appreciate you taking the time to read this post. If you're looking for a workout tracking app that values simplicity & functionality, I invite you to [give Titan a try](/).
 
-# Related posts
-```dataview
-LIST WITHOUT ID "[["+file.name+"]]" + " " + dateformat(date, "yyyy MMM dd")
-FROM #blog/post
-WHERE contains(file.tags, "projects/titan") AND file.name != this.file.name
-```

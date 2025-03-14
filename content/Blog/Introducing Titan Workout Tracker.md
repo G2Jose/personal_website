@@ -26,7 +26,6 @@ Here are some early screenshots of what I've built:
 | ![attachments/titan-v1-home.png\|200](./attachments/titan-v1-home.png)         | ![attachments/titan-v1-session.png\|200](./attachments/titan-v1-session.png)                                   | ![attachments/titan-v1-feed.png\|200](./attachments/titan-v1-feed.png) |
 | ![attachments/titan-v1-heatmaps.png\|200](./attachments/titan-v1-heatmaps.png) | ![attachments/titan-v1-workout-session-complete.png\|200](./attachments/titan-v1-workout-session-complete.png) |                                                                        |
 
-This is just the beginning, and I plan to document my experience building this product on this blog. 
+This is just the beginning, and I plan to document my experience building this product here - [#projects/titan](../tags/projects/titan).
 
 Want to try the app out? It's available [here](https://titangymapp.com) for Android & iOS!
-

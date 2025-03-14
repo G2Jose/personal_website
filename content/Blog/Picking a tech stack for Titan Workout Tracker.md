@@ -124,9 +124,3 @@ Personally I'm also a big fan of [Datadog](https://www.datadoghq.com/), but it's
 
 It's been a lot of fun to build this app. I appreciate you taking the time to read this post. If you're looking for a workout tracking app that values simplicity & functionality, I invite you to [give Titan a try](https://www.titangymapp.com).
 
-# Related posts
-```dataview
-LIST WITHOUT ID "[["+file.name+"]]" + " " + dateformat(date, "yyyy MMM dd")
-FROM #blog/post
-WHERE contains(file.tags, "projects/titan") AND file.name != this.file.name
-```
