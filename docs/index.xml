@@ -6,6 +6,12 @@
       <description>Last 10 notes on George Jose</description>
       <generator>Quartz -- quartz.jzhao.xyz</generator>
       <item>
+    <title>Resume</title>
+    <link>https://georgejose.com/Resume</link>
+    <guid>https://georgejose.com/Resume</guid>
+    <description>Summary Product-minded engineering generalist with years of experience in various capacities – technical leadership, people, process &amp; project management, hands-on software development Extensive experience leading teams and executing complex, open-ended projects in startup and corporate environm...</description>
+    <pubDate>Fri, 14 Mar 2025 03:31:09 GMT</pubDate>
+  </item><item>
     <title>Hi I&#039;m George</title>
     <link>https://georgejose.com/</link>
     <guid>https://georgejose.com/</guid>
@@ -17,12 +23,6 @@
     <guid>https://georgejose.com/Blog/</guid>
     <description></description>
     <pubDate>Fri, 14 Mar 2025 03:08:23 GMT</pubDate>
-  </item><item>
-    <title>Resume</title>
-    <link>https://georgejose.com/Resume</link>
-    <guid>https://georgejose.com/Resume</guid>
-    <description>Summary Product-minded engineering generalist with years of experience in various capacities – technical leadership, people, process &amp; project management, hands-on software development Extensive experience leading teams and executing complex, open-ended projects in startup and corporate environm...</description>
-    <pubDate>Thu, 13 Mar 2025 20:33:59 GMT</pubDate>
   </item><item>
     <title>My Obsidian setup in 2025</title>
     <link>https://georgejose.com/Blog/My-Obsidian-setup-in-2025</link>
@@ -51,7 +51,7 @@
     <title>Introducing Titan Workout Tracker</title>
     <link>https://georgejose.com/Blog/Introducing-Titan-Workout-Tracker</link>
     <guid>https://georgejose.com/Blog/Introducing-Titan-Workout-Tracker</guid>
-    <description>post titan 👋 Hi I’m George and I’m the maker of Titan Workout Tracker, a simple to use yet fully featured workout tracker for strength training and body weight based exercises.</description>
+    <description>post titan I recently decided to build Titan Workout Tracker, a simple to use yet fully featured workout tracker for strength training and body weight based exercises.</description>
     <pubDate>Tue, 13 Jun 2023 00:00:00 GMT</pubDate>
   </item><item>
     <title>Exploring User Sentiment On Apps Using AI</title>
