@@ -52,6 +52,7 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     // Component.Explorer(),
+    // Component.DesktopOnly(Component.RecentNotes({ limit: 5, showTags: false })),
   ],
   right: [
     Component.Graph(),
