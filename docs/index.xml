@@ -10,7 +10,7 @@
     <link>https://georgejose.com/Blog/</link>
     <guid>https://georgejose.com/Blog/</guid>
     <description></description>
-    <pubDate>Fri, 14 Mar 2025 02:40:07 GMT</pubDate>
+    <pubDate>Fri, 14 Mar 2025 03:08:23 GMT</pubDate>
   </item><item>
     <title>Resume</title>
     <link>https://georgejose.com/Resume</link>
@@ -29,12 +29,6 @@
     <guid>https://georgejose.com/Blog/My-Obsidian-setup-in-2025</guid>
     <description>post Philosophy My overarching goals with writing notes are 2 fold: To help me think clearly To serve as a personal knowledge base I can reference later One of the great things about Obsidian is how it’s infinitely customizable.</description>
     <pubDate>Fri, 21 Feb 2025 00:00:00 GMT</pubDate>
-  </item><item>
-    <title>My publishing setup in 2025</title>
-    <link>https://georgejose.com/Blog/My-publishing-setup-in-2025</link>
-    <guid>https://georgejose.com/Blog/My-publishing-setup-in-2025</guid>
-    <description>post Throughout the years I’ve tried various setups for publishing blog posts and notes online.</description>
-    <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
   </item><item>
     <title>Contact</title>
     <link>https://georgejose.com/Contact</link>
@@ -65,6 +59,12 @@
     <guid>https://georgejose.com/Blog/Exploring-User-Sentiment-On-Apps-Using-AI</guid>
     <description>post Context App reviews are a great way of understanding how your users feel about your product.</description>
     <pubDate>Sun, 30 Apr 2023 00:00:00 GMT</pubDate>
+  </item><item>
+    <title>Exploring Sorbet with Rails at Drop</title>
+    <link>https://georgejose.com/Blog/Exploring-Sorbet-with-Rails-at-Drop</link>
+    <guid>https://georgejose.com/Blog/Exploring-Sorbet-with-Rails-at-Drop</guid>
+    <description>post ruby ruby-on-rails static-analysis Note This is a shorter version of a more detailed post I made internally at Drop while researching this topic.</description>
+    <pubDate>Wed, 22 Jun 2022 00:00:00 GMT</pubDate>
   </item>
     </channel>
   </rss>

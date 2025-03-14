@@ -1,6 +1,7 @@
 ---
 title: My publishing setup in 2025
 date: 2025-02-20
+draft: true
 ---
 #blog/post   
 
