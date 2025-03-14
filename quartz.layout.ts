@@ -26,13 +26,9 @@ export const sharedPageComponents: SharedLayout = {
 }
 
 const Explorer = Component.Explorer({
-  folderClickBehavior: "link",
   filterFn: (node) => {
     return node.displayName !== "attachments"
   },
-
-  useSavedState: true,
-  folderDefaultState: "collapsed",
 })
 
 // components for pages that display a single page (e.g. a single note)
@@ -55,7 +51,7 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    // Component.Explorer(),
   ],
   right: [
     Component.Graph(),
@@ -79,7 +75,7 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer(),
+    // Component.Explorer(),
   ],
-  right: [],
+  right: [Component.Graph()],
 }
